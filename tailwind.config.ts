@@ -6,6 +6,8 @@ export default {
     extend: {
       fontFamily: {
         sans: [
+          'Poppins', 'sans-serif',
+          'Helvetica',
           '"Inter"',
           "ui-sans-serif",
           "system-ui",
@@ -18,5 +20,19 @@ export default {
       },
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none',  // IE and Edge
+          'scrollbar-width': 'none',     // Firefox
+          '&::-webkit-scrollbar': {
+            display: 'none',  // Chrome, Safari, and Opera
+          },
+        },
+      });
+    },
+  ],
+} satisfies Config
+
+

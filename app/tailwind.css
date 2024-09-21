@@ -4,9 +4,38 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  font-family: 'Poppins', Arial, sans-serif;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+body {
+  @apply bg-white dark:bg-gray-50;
+
+  @media (prefers-color-scheme: white) {
+    color-scheme: white;
   }
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  scroll-snap-align: start;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  gap: 8rem;
+  width: max-content; 
+  animation: marquee 150s linear infinite;
 }
