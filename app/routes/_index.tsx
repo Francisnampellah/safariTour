@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { FcAbout } from "react-icons/fc";
 import { FaConciergeBell } from "react-icons/fa";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
+import { MdGroups } from "react-icons/md";
+
 import AccordionItem from "~/component/Accordion";
 
 
@@ -319,10 +321,19 @@ const OurPartner = () => (
 const Brands = () => (
   <section
     id="section-3"
-    className="relative w-full overflow-hidden py-16 h-[60vh] flex justify-center items-center"
+    className="w-full overflow-hidden py-16 h-[60vh] flex flex-col justify-center items-center"
   >
-    <div className="flex w-full gap-8 animate-marquee">
+    <div className="w-full flex justify-start px-16 my-16">
 
+    <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><MdGroups className="h-16 w-16" /> OUR PARTENERS</h2>
+    </div>
+
+    <div className="flex w-full gap-8 animate-marquee">
+      {[...logoArray, ...logoArray].map((item, index) => (
+        <div key={index} className={`${item?.className[0]} flex-shrink-0`}>
+          <span className="text-6xl font-extrabold">{item.name}</span>
+        </div>
+      ))}
       {[...logoArray, ...logoArray].map((item, index) => (
         <div key={index} className={`${item?.className[0]} flex-shrink-0`}>
           <span className="text-6xl font-extrabold">{item.name}</span>
@@ -360,7 +371,7 @@ const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any
         <h1 className="text-6xl">
           Frequently Asked <br />Questions
         </h1>
-        <span className="text-lg mb-4 ">
+        <span className="text-lg mb-4 text-gray-600 ">
           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.<br /> Our mission is to provide you with the best travel experiences.
         </span>
       </div>
@@ -385,7 +396,7 @@ const ServicesSection = () => (
   <section id="section-5" className="flex flex-col justify-start gap-4 h-screen py-8 px-16">
     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-8 items-center"><FaConciergeBell className="h-16 w-16" /> OUR SERVICES</h2>
     <h2 className="text-5xl">We are a passionate team of travel enthusiasts</h2>
-    <p className="text-lg mb-2">
+    <p className="text-lg mb-2 text-gray-600 ">
       We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
     </p>
     <div className="flex gap-8 h-full">
