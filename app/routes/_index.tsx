@@ -4,6 +4,8 @@ import { FcAbout } from "react-icons/fc";
 import { FaConciergeBell } from "react-icons/fa";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { MdGroups } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+
 
 import AccordionItem from "~/component/Accordion";
 
@@ -44,6 +46,11 @@ export const meta: MetaFunction = () => {
   //     console.warn(`Element with id ${sections[sectionIndex]} not found`);
   //   }
   // }, [sectionIndex]);
+
+
+
+
+
 
 
   return [
@@ -171,7 +178,9 @@ export default function Index() {
             {/* /// HEADER */}
             <div className="flex justify-between items-center">
 
-              <div className="bg-white w-36 h-16 flex justify-center items-center rounded-br">
+              {/* /// SaFARi */}
+              {/* <div className="absolute w-10 h-10 rounded-full bg-red-500" style={{left:150,top:8}}></div> */}
+              <div className="bg-white  w-36 h-16 flex justify-center items-center rounded-br">
                 <span className="text-2xl font-black">Safari</span>
               </div>
 
@@ -225,6 +234,7 @@ export default function Index() {
           <AboutUsSection />
           <ServicesSection />
           <Brands />
+          <THeForgeton />
           <FQA openIndex={openIndex} handleToggle={handleToggle} />
           <OurPartner />
           <LastBanner />
@@ -321,12 +331,12 @@ const OurPartner = () => (
 const Brands = () => (
   <section
     id="section-3"
-    className="w-full overflow-hidden py-16 h-[60vh] flex flex-col justify-center items-center"
+    className="w-full overflow-hidden py-16 h-[40vh] flex flex-col justify-center items-center"
   >
-    <div className="w-full flex justify-start px-16 my-16">
+    {/* <div className="w-full flex justify-start px-16 my-16">
 
-    <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><MdGroups className="h-16 w-16" /> OUR PARTENERS</h2>
-    </div>
+      <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><MdGroups className="h-16 w-16" /> OUR PARTENERS</h2>
+    </div> */}
 
     <div className="flex w-full gap-8 animate-marquee">
       {[...logoArray, ...logoArray].map((item, index) => (
@@ -413,9 +423,62 @@ const ServicesSection = () => (
 
 
 
+const THeForgeton = () => (
+
+  <div className="px-20 flex flex-col justify-center h-screen">
+
+<h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FaLocationDot className="h-16 w-16" /> Destinations</h2>
+    <h2 className="text-5xl"> We are a passionate team of travel enthusiasts </h2>
+    <p className="text-lg mt-4 text-gray-600 ">
+      We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
+    </p>
 
 
-/// INDIVIDUAL COMPONENTS
+    <div className="flex w-full sl gap-16 py-8 h-full">
+      <div className="flex flex-1 px-2">
+        <div className="w-full bg-cover h-full rounded-3xl overflow-hidden" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
+          <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
+            <div className="flex flex-col bottom-4 left-4 text-white">
+              <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
+              <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div className="flex flex-row gap-8 flex-1 h-full">
+        <div className="w-full bg-contain h-full rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
+          <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
+            <div className="flex flex-col bottom-4 left-4 text-white">
+              <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
+              <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
+            </div>
+
+          </div>
+        </div>
+        <div className="w-full bg-contain h-full rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
+          <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
+            <div className="flex flex-col bottom-4 left-4 text-white">
+              <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
+              <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+)
+
+
+
+
+
+{/* /// INDIVIDUAL COMPONENTS */ }
 
 const CandidateCard = ({ name, feedback }: Candidate) => (
   <div className="flex w-[20%]">
