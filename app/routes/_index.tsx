@@ -171,7 +171,7 @@ export default function Index() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#F5F5F7]">
+      <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]">
         <div className="w-full shadow-sm overflow-hidden bg-cover h-[95vh] rounded-3xl bg-center" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})`, backgroundSize: "100%" }}>
           <div className="flex flex-col justify-between  w-full h-full bg-black bg-opacity-40">
 
@@ -309,17 +309,14 @@ const AboutUsSection = () => (
 const OurPartner = () => (
 
   <div className="flex">
-    <div className="flex w-full flex-wrap justify-between">
+    <div className="flex w-full flex-wrap gap-8 justify-between">
       {candidates.map((candidate, index) => (
-        <div className="flex" key={index}>
-          <div className="flex flex-col bg-white rounded-lg shadow-lg p-5 text-center">
-            <div className="flex flex-row justify-center items-center">
-
-              <img src={AllImages.BannerImages.imageUrl} alt={candidate.name} className={`w-16 h-16 rounded-full mx-auto mb-4 ${AllImages.BannerImages.StyleClass}`} />
+        <div key={index} className="flex flex-1 flex-col bg-white rounded-lg shadow-lg py-6 px-2" >
+          <div className="flex flex-row items-center w-full gap-8">
+              <img src={AllImages.BannerImages.imageUrl} alt={candidate.name} className={`w-16 h-16 rounded-full mb-4 ${""}`} />
               <h3 className="text-lg font-semibold">{candidate.name}</h3>
             </div>
-            <p className="text-sm text-gray-600">{candidate.feedback}</p>
-          </div>
+            <p className="text-sm text-gray-600 flex flex-wrap p-2">{candidate.feedback}</p>
         </div>
       ))}
     </div>
@@ -333,17 +330,7 @@ const Brands = () => (
     id="section-3"
     className="w-full overflow-hidden py-16 h-[40vh] flex flex-col justify-center items-center"
   >
-    {/* <div className="w-full flex justify-start px-16 my-16">
-
-      <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><MdGroups className="h-16 w-16" /> OUR PARTENERS</h2>
-    </div> */}
-
     <div className="flex w-full gap-8 animate-marquee">
-      {[...logoArray, ...logoArray].map((item, index) => (
-        <div key={index} className={`${item?.className[0]} flex-shrink-0`}>
-          <span className="text-6xl font-extrabold">{item.name}</span>
-        </div>
-      ))}
       {[...logoArray, ...logoArray].map((item, index) => (
         <div key={index} className={`${item?.className[0]} flex-shrink-0`}>
           <span className="text-6xl font-extrabold">{item.name}</span>
@@ -427,7 +414,7 @@ const THeForgeton = () => (
 
   <div className="px-20 flex flex-col justify-center h-screen">
 
-<h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FaLocationDot className="h-16 w-16" /> Destinations</h2>
+    <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FaLocationDot className="h-16 w-16" /> Destinations</h2>
     <h2 className="text-5xl"> We are a passionate team of travel enthusiasts </h2>
     <p className="text-lg mt-4 text-gray-600 ">
       We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
