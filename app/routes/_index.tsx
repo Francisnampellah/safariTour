@@ -173,7 +173,7 @@ export default function Index() {
       <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]">
         <div className="w-full shadow-sm bg-cover h-[95vh] md:h-[95vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
           <div className="flex flex-col justify-between w-full h-full bg-black bg-opacity-40">
-            
+
             {/* Header */}
             <div className="main-container">
               <div className="kontainer">
@@ -266,128 +266,6 @@ export default function Index() {
 
 
 
-// export default function Index() {
-//   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-
-//   const handleToggle = (index: number) => {
-//     setOpenIndex(openIndex === index ? null : index);
-//   };
-
-//   return (
-//     <div>
-//       {/* Hero Section */}
-//       <div className="flex flex-col px-4 pt-4 pb-8 gap-4  bg-[#fff]">
-//         <div className="w-full shadow-sm overflow-hidden bg-cover h-[95vh] rounded-3xl bg-center" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})`, backgroundSize: "100%" }}>
-//           <div className="flex flex-col justify-between  w-full h-full bg-black bg-opacity-40">
-
-//             {/* /// HEADER */}
-//             {/* <div className="flex justify-between items-center"> */}
-//             <div className="main-container">
-
-
-//               {/* /// SaFARi */}
-//               {/* <div className="absolute w-10 h-10 rounded-full bg-red-500" style={{left:150,top:8}}></div> */}
-//               <div className="kontainer">
-
-//                 <div className="item">
-//                   <span className="text-xl font-black">Safari</span>
-//                 </div>
-
-//               </div>
-
-//               <div className="flex px-8">
-//                 <ul className="flex flex-row gap-4 px-16">
-//                   {["Home", "Services", "FAQ", "Testimonials"].map((link, index) => (
-//                     <li key={index} className="hover:cursor-pointer font-black">{link}</li>
-//                   ))}
-//                 </ul>
-//               </div>
-//             </div>
-
-//             {/* /// BANNER */}
-
-//             <div className="flex flex-col justify-center items-center h-full">
-//               <h1 className="text-6xl text-center  font-semibold text-white ">We are a passionate team <br />of travel enthusiasts</h1>
-//               <p className="text-lg  text-center text-gray-400 ">
-//                 We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-//                 <span className="">Our mission is to provide you with the best travel experiences.</span>
-//               </p>
-//             </div>
-
-
-//             <div className="flex flex-col justify-between text-white px-4 py-6 gap-4">
-
-//               <div className="flex justify-center items-center p-2 w-48 border border-white rounded-full">
-
-//                 <span className="">
-//                   Arusha , Tanzania
-//                 </span>
-
-//               </div>
-
-//               <div className="flex justify-between">
-//                 <p className="text-sm  w-96  text-white text-start">
-//                   We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-//                   <span className="text-gray-300">Our mission is to provide you with the best travel experiences.</span>
-//                 </p>
-
-//                 <button className="flex justify-center items-center gap-8 border py-1 border-white text-white  px-4 rounded-full">Get Started<div className="bg-white flex justify-center items-center text-black rounded-full w-10 h-10">
-//                   {">"} </div></button>
-
-//               </div>
-//             </div>
-
-
-//           </div>
-//         </div>
-//         <div className="px-6">
-
-//           <AboutUsSection />
-//           <ServicesSection />
-//           <Brands />
-//           <THeForgeton />
-//           <FQA openIndex={openIndex} handleToggle={handleToggle} />
-//           <OurPartner />
-//           <LastBanner />
-//         </div>
-
-
-//       </div>
-
-//       {/* Footer */}
-//       <footer className="py-16 px-12 bg-[#010101] text-white">
-//         <div className="grid grid-cols-5 gap-16">
-//           {["Safari", "Links", "Our Activities", "About Us", "Contacts"].map((title, index) => (
-//             <div key={index} className="w-56">
-//               <h1 className="text-2xl">{title}</h1>
-//               <ul>
-//                 {index === 0 ? (
-//                   <p>We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.</p>
-//                 ) : index === 1 ? (
-//                   ["Home", "Services", "FAQ", "Testimonials"].map((link, idx) => <li key={idx}>{link}</li>)
-//                 ) : index === 2 ? (
-//                   ["Tour", "Travel", "Adventure", "Explore"].map((link, idx) => <li key={idx}>{link}</li>)
-//                 ) : index === 3 ? (
-//                   ["Our Story", "Our Team", "Our Mission", "Our Vision"].map((link, idx) => <li key={idx}>{link}</li>)
-//                 ) : (
-//                   <>
-//                     <li>Address: Home Ho 204 Street</li>
-//                     <li>Phone: +620 123 456 789</li>
-//                     <li>Email: Safari@travel.bn</li>
-//                     <li>Website: Safari.travel.bn</li>
-//                   </>
-//                 )}
-//               </ul>
-//             </div>
-//           ))}
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// }
-
-
 
 /// MAIN COMPONENTS 
 
@@ -425,33 +303,6 @@ const AboutUsSection = () => (
 );
 
 
-// const AboutUsSection = () => (
-//   <section id="section-1" className="flex flex-col justify-start py-40 gap-16 h-screen px-16 scrollSnap">
-//     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FcAbout className="h-16 w-16" /> ABOUT US</h2>
-//     <div className="flex w-full gap-4">
-//       <div className="flex flex-1">
-
-//         <p className="text-5xl text-gray-600">
-//           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-//           <span className="text-gray-300">
-//             Our mission is to provide you with the best travel experiences.
-//           </span>
-//         </p>
-//       </div>
-
-//       <div className="flex flex-1  gap-2">
-//         {[1, 2, 3].map((item) => (
-//           <div key={item} className="flex flex-1 flex-col items-center rounded-lg p-4 m-2">
-//             <span className="text-4xl font-extrabold">+620</span>
-//             <span className="text-xl text-gray-400">Passionate team</span>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </section>
-// );
-
-
 
 const OurPartner = () => (
   <div className="flex justify-center">
@@ -474,24 +325,6 @@ const OurPartner = () => (
 )
 
 
-// const OurPartner = () => (
-
-//   <div className="flex">
-//     <div className="flex w-full flex-wrap gap-8 justify-between">
-//       {candidates.map((candidate, index) => (
-//         <div key={index} className="flex flex-1 flex-col bg-white rounded-lg shadow-lg py-6 px-2" >
-//           <div className="flex flex-row items-center w-full gap-8">
-//             <img src={AllImages.BannerImages.imageUrl} alt={candidate.name} className={`w-16 h-16 rounded-full mb-4 ${""}`} />
-//             <h3 className="text-lg font-semibold">{candidate.name}</h3>
-//           </div>
-//           <p className="text-sm text-gray-600 flex flex-wrap p-2">{candidate.feedback}</p>
-//         </div>
-//       ))}
-//     </div>
-
-//   </div>
-// )
-
 
 const Brands = () => (
   <section
@@ -508,11 +341,8 @@ const Brands = () => (
   </section>
 );
 
-
-
 const LastBanner = () => (
-  <section id="section-8" className="py-16 md:py-24 lg:py-32 px-4 md:px-12 lg:px-20 flex flex-col justify-center min-h-screen">
-
+  <section id="section-8" className="py-6 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
     <div className={`w-full bg-cover h-96 md:h-full rounded-3xl overflow-hidden bg-left-bottom`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
       <div className="w-full h-full bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 py-4">
         <div className="flex flex-col bottom-4 left-4 text-white">
@@ -523,23 +353,6 @@ const LastBanner = () => (
     </div>
   </section>
 )
-
-
-// const LastBanner = () => (
-//   <section id="section-8" className="py-32 px-20 flex flex-col justify-center h-screen">
-
-//     <div className={`w-full bg-cover h-full rounded-3xl overflow-hidden ${"bg-left-bottom"}`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-//       <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
-//         <div className="flex flex-col bottom-4 left-4 text-white">
-//           <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
-//           <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-//         </div>
-
-//       </div>
-
-//     </div>
-//   </section>
-// )
 
 
 
@@ -577,45 +390,6 @@ const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any
 
   </section>
 );
-
-
-// const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any }) => (
-
-//   <section id="section-4" className="px-20 flex flex-col justify-center h-screen">
-
-//     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><BsFillPatchQuestionFill className="h-16 w-16" /> FQA's</h2>
-
-//     <div className="flex w-full justify-center items-start gap-4">
-
-//       <div className="flex flex-col gap-4 flex-1 px-2">
-//         <h1 className="text-6xl">
-//           Frequently Asked <br />Questions
-//         </h1>
-//         <span className="text-lg mb-4 text-gray-600 ">
-//           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.<br /> Our mission is to provide you with the best travel experiences.
-//         </span>
-//       </div>
-
-//       <div className="flex flex-col justify-center items-start flex-1 h-32 px-8">
-//         {accordionData.map((item, index) => (
-//           <AccordionItem
-//             key={index}
-//             title={item.title}
-//             content={item.content}
-//             isOpen={openIndex === index}
-//             onToggle={() => handleToggle(index)}
-//           />
-//         ))}
-//       </div>
-//     </div>
-
-//   </section>
-// );
-
-
-
-
-
 
 
 const ServicesSection = () => (
@@ -656,29 +430,6 @@ const ServicesSection = () => (
     </div>
   </section>
 );
-
-
-// const ServicesSection = () => (
-//   <section id="section-5" className="flex flex-col justify-start gap-4 h-screen py-8 px-16 scrollSnap">
-//     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-8 items-center"><FaConciergeBell className="h-16 w-16" /> OUR SERVICES</h2>
-//     <h2 className="text-5xl">We are a passionate team of travel enthusiasts</h2>
-//     <p className="text-lg mb-2 text-gray-600 ">
-//       We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
-//     </p>
-//     <div className="flex gap-8 h-full">
-//       <div className="w-[38%]">
-//         <ServiceCard title="Expert Travel Advice" description="Tips and guides to enhance your travel experience." />
-//       </div>
-//       <div className="flex flex-col gap-8 flex-1">
-//         <ServiceCard extraClass={"bg-right-bottom"} title="Personalized Itineraries" description="Tailored plans to suit your interests." />
-//         <ServiceCard extraClass={"bg-center"} title="Exclusive Travel Deals" description="Save more with exclusive offers and discounts." />
-//       </div>
-//     </div>
-//   </section>
-// );
-
-
-
 
 
 const THeForgeton = () => (
@@ -733,63 +484,6 @@ const THeForgeton = () => (
     </div>
   </div>
 );
-
-
-
-
-// const THeForgeton = () => (
-
-//   <div className="px-20 flex flex-col justify-center py-8 h-screen">
-
-//     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FaLocationDot className="h-16 w-16" /> Destinations</h2>
-//     <h2 className="text-5xl"> We are a passionate team of travel enthusiasts </h2>
-//     <p className="text-lg mt-4 text-gray-600 ">
-//       We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
-//     </p>
-
-//     <div className="flex w-full sl gap-16 py-8 h-full">
-//       <div className="image-container flex flex-1 mx-2 overflow-hidden rounded-3xl">
-//         <div
-//           className="image-background w-full bg-cover h-full overflow-hidden"
-//           style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}
-//         >
-//         </div>
-//         <div className="w-full image-text  h-full bg-black flex flex-col justify-end items-end bg-opacity-40 px-8 py-4">
-//           <div className="flex flex-col bottom-4 left-4 text-white z-10">
-//             <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
-//             <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="flex flex-row gap-8 flex-1 h-full">
-
-
-//         <div className="w-full bg-contain h-full rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-//           <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
-//             <div className="flex flex-col bottom-4 left-4 text-white">
-//               <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
-//               <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-//             </div>
-
-//           </div>
-//         </div>
-
-//         <div className="w-full bg-contain h-full rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-//           <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40  px-8 py-4">
-//             <div className="flex flex-col bottom-4 left-4 text-white">
-//               <h3 className="text-xl font-semibold">Expert Travel Advice</h3>
-//               <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-//             </div>
-
-//           </div>
-//         </div>
-
-//       </div>
-//     </div>
-//   </div>
-// )
-
 
 
 
