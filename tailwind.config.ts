@@ -4,6 +4,9 @@ export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      clipPath: {
+        'custom': 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', // This creates an inverted effect
+      },
       fontFamily: {
         sans: [
           'Poppins', 'sans-serif',

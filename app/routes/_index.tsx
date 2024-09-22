@@ -171,17 +171,23 @@ export default function Index() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]">
+      <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff] snap-y">
         <div className="w-full shadow-sm overflow-hidden bg-cover h-[95vh] rounded-3xl bg-center" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})`, backgroundSize: "100%" }}>
           <div className="flex flex-col justify-between  w-full h-full bg-black bg-opacity-40">
 
             {/* /// HEADER */}
-            <div className="flex justify-between items-center">
+            {/* <div className="flex justify-between items-center"> */}
+            <div className="main-container">
+
 
               {/* /// SaFARi */}
               {/* <div className="absolute w-10 h-10 rounded-full bg-red-500" style={{left:150,top:8}}></div> */}
-              <div className="bg-white  w-36 h-16 flex justify-center items-center rounded-br">
-                <span className="text-2xl font-black">Safari</span>
+              <div className="kontainer">
+
+                <div className="item">
+                  <span className="text-xl font-black">Safari</span>
+                </div>
+
               </div>
 
               <div className="flex px-8">
@@ -280,7 +286,7 @@ export default function Index() {
 /// MAIN COMPONENTS 
 
 const AboutUsSection = () => (
-  <section id="section-1" className="flex flex-col justify-start py-40 gap-16 h-screen px-16">
+  <section id="section-1" className="flex flex-col justify-start py-40 gap-16 h-screen px-16 scrollSnap">
     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-8 flex gap-8 items-center"><FcAbout className="h-16 w-16" /> ABOUT US</h2>
     <div className="flex w-full gap-4">
       <div className="flex flex-1">
@@ -313,10 +319,10 @@ const OurPartner = () => (
       {candidates.map((candidate, index) => (
         <div key={index} className="flex flex-1 flex-col bg-white rounded-lg shadow-lg py-6 px-2" >
           <div className="flex flex-row items-center w-full gap-8">
-              <img src={AllImages.BannerImages.imageUrl} alt={candidate.name} className={`w-16 h-16 rounded-full mb-4 ${""}`} />
-              <h3 className="text-lg font-semibold">{candidate.name}</h3>
-            </div>
-            <p className="text-sm text-gray-600 flex flex-wrap p-2">{candidate.feedback}</p>
+            <img src={AllImages.BannerImages.imageUrl} alt={candidate.name} className={`w-16 h-16 rounded-full mb-4 ${""}`} />
+            <h3 className="text-lg font-semibold">{candidate.name}</h3>
+          </div>
+          <p className="text-sm text-gray-600 flex flex-wrap p-2">{candidate.feedback}</p>
         </div>
       ))}
     </div>
@@ -328,7 +334,7 @@ const OurPartner = () => (
 const Brands = () => (
   <section
     id="section-3"
-    className="w-full overflow-hidden py-16 h-[40vh] flex flex-col justify-center items-center"
+    className="w-full overflow-hidden py-16 h-[40vh] flex flex-col justify-center items-center "
   >
     <div className="flex w-full gap-8 animate-marquee">
       {[...logoArray, ...logoArray].map((item, index) => (
@@ -390,7 +396,7 @@ const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any
 );
 
 const ServicesSection = () => (
-  <section id="section-5" className="flex flex-col justify-start gap-4 h-screen py-8 px-16">
+  <section id="section-5" className="flex flex-col justify-start gap-4 h-screen py-8 px-16 scrollSnap">
     <h2 className="text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-8 items-center"><FaConciergeBell className="h-16 w-16" /> OUR SERVICES</h2>
     <h2 className="text-5xl">We are a passionate team of travel enthusiasts</h2>
     <p className="text-lg mb-2 text-gray-600 ">
@@ -419,7 +425,6 @@ const THeForgeton = () => (
     <p className="text-lg mt-4 text-gray-600 ">
       We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
     </p>
-
 
     <div className="flex w-full sl gap-16 py-8 h-full">
       <div className="flex flex-1 px-2">
@@ -453,8 +458,6 @@ const THeForgeton = () => (
 
           </div>
         </div>
-
-
 
       </div>
     </div>
