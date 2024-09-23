@@ -1,5 +1,5 @@
 import { MetaFunction } from "@remix-run/node";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { FcAbout } from "react-icons/fc";
 import { FaConciergeBell } from "react-icons/fa";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
@@ -17,42 +17,43 @@ import AccordionItem from "~/component/Accordion";
 export const meta: MetaFunction = () => {
   const [sectionIndex, setSectionIndex] = useState(0);
 
+  const sectionRefs = useRef<HTMLDivElement[]>([]); // Create refs for each section
 
-  const sections = ['section-1', 'section-2', 'section-3', 'section-4', 'section-5', 'section-6', 'section-7', 'section-8']; // Add all your section IDs here
+  useEffect(() => {
+    const handleScroll = (event: WheelEvent) => {
+      event.preventDefault(); // Prevent default scroll behavior
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const sectionHeight = window.innerHeight;
+      const sections = sectionRefs.current;
+      const currentPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
 
-    const newIndex = Math.round(scrollPosition / sectionHeight);
-    if (newIndex !== sectionIndex) {
-      setSectionIndex(newIndex);
-    }
-  };
-  // // Add the scroll event listener
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
+      if (event.deltaY > 0) {
+        // Scroll down
+        for (let i = 0; i < sections.length; i++) {
+          const sectionTop = sections[i].offsetTop;
+          if (sectionTop > currentPosition + viewportHeight * 0.5) {
+            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+            break;
+          }
+        }
+      } else {
+        // Scroll up
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const sectionTop = sections[i].offsetTop;
+          if (sectionTop < currentPosition - viewportHeight * 0.5) {
+            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+            break;
+          }
+        }
+      }
+    };
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [sectionIndex]);
+    window.addEventListener('wheel', handleScroll);
 
-  // // Smooth scroll to the new section when the sectionIndex changes
-  // useEffect(() => {
-  //   const sectionElement = document.getElementById(sections[sectionIndex]);
-
-  //   if (sectionElement) {
-  //     sectionElement.scrollIntoView({ behavior: 'smooth' });
-  //   } else {
-  //     console.warn(`Element with id ${sections[sectionIndex]} not found`);
-  //   }
-  // }, [sectionIndex]);
-
-
-
-
-
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, []);
 
 
   return [
@@ -160,7 +161,6 @@ const candidates: Candidate[] = [
 ];
 
 
-import { IoMdArrowRoundForward } from "react-icons/io";
 
 
 export default function Index() {
@@ -224,15 +224,15 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="px-6">
-          <PopularPackage />
-          <AboutUsSection />
-          <ServicesSection />
-          <Brands />
-          <THeForgeton />
-          <FQA openIndex={openIndex} handleToggle={handleToggle} />
-          <OurPartner />
-          <LastBanner />
+        <div className="px-6 flex flex-col gap-16 pt-16">
+          <PopularPackage  />
+          <AboutUsSection  />
+          <ServicesSection  />
+          <Brands  />
+          <THeForgeton  />
+          <FQA  openIndex={openIndex} handleToggle={handleToggle} />
+          <OurPartner  />
+          <LastBanner  />
         </div>
       </div>
 
@@ -278,7 +278,7 @@ export default function Index() {
 const PopularPackage = () => (
   <section
     id="section-1"
-    className="flex flex-col justify-start py-20 md:py-40 gap-4 md:gap-8 h-screen px-6 md:px-16 scrollSnap"
+    className="flex flex-col justify-start py-4 md:py-8 gap-4 md:gap-4 h-screen px-6 md:px-16  "
   >
 
     <div className="flex justify-between">
@@ -320,14 +320,14 @@ const PopularPackage = () => (
 const AboutUsSection = () => (
   <section
     id="section-1"
-    className="flex flex-col justify-start py-20 md:py-40 gap-8 md:gap-16 h-screen px-6 md:px-16 scrollSnap"
+    className="flex flex-col justify-center h-[150vh]  py-4 md:py-16 gap-8 md:gap-16 md:h-screen px-6 md:px-16 "
   >
     <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-6 md:mb-8 flex gap-4 md:gap-8 items-center">
       <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> ABOUT US
     </h2>
     <div className="flex flex-col md:flex-row w-full gap-4">
       <div className="flex flex-1">
-        <p className="text-2xl md:text-5xl text-gray-600">
+        <p className="text-xl md:text-5xl text-gray-600">
           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
           <span className="text-gray-300 block mt-2 md:mt-4">
             Our mission is to provide you with the best travel experiences.
@@ -350,10 +350,11 @@ const AboutUsSection = () => (
 
 
 const OurPartner = () => (
-  <div className="flex justify-center">
-    <div className="flex w-full flex-wrap gap-6 justify-between max-w-6xl">
+  <section
+   className="flex justify-center h-screen items-center">
+    <div className="flex w-full flex-col md:flex-row flex-wrap gap-6 justify-between max-w-6xl">
       {candidates.map((candidate, index) => (
-        <div key={index} className="flex flex-1 flex-col bg-white rounded-lg shadow-lg py-6 px-4 w-full md:w-1/2 lg:w-1/3">
+        <div key={index} className="flex flex-1 flex-col bg-white h-48 rounded-lg shadow-lg py-6 px-4 w-full md:w-1/2 lg:w-1/3">
           <div className="flex flex-row items-center w-full gap-4">
             <img
               src={AllImages.BannerImages.imageUrl}
@@ -366,7 +367,7 @@ const OurPartner = () => (
         </div>
       ))}
     </div>
-  </div>
+  </section>
 )
 
 
@@ -374,7 +375,8 @@ const OurPartner = () => (
 const Brands = () => (
   <section
     id="section-3"
-    className="w-full overflow-hidden py-16 h-[40vh] flex flex-col justify-center items-center "
+    
+    className="w-full overflow-hidden py-16  flex flex-col justify-center h-screen items-center "
   >
     <div className="flex w-full gap-8 animate-marquee">
       {[...logoArray, ...logoArray].map((item, index) => (
@@ -387,7 +389,9 @@ const Brands = () => (
 );
 
 const LastBanner = () => (
-  <section id="section-8" className="py-6 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
+  <section
+  
+   id="section-8" className="py-4 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
     <div className={`w-full bg-cover h-96 md:h-full rounded-3xl overflow-hidden bg-left-bottom`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
       <div className="w-full h-full bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 py-4">
         <div className="flex flex-col bottom-4 left-4 text-white">
@@ -402,7 +406,7 @@ const LastBanner = () => (
 
 
 const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any }) => (
-  <section id="section-4" className="px-6 md:px-16 lg:px-20 flex flex-col justify-center min-h-screen">
+  <section  id="section-4" className="px-6 md:px-16 lg:px-20 flex flex-col justify-center h-screen">
 
     <h2 className="text-2xl md:text-4xl font-semibold text-start text-blue-500 mb-6 flex gap-4 md:gap-8 items-center">
       <BsFillPatchQuestionFill className="h-10 w-10 md:h-16 md:w-16" /> FQA's
@@ -478,7 +482,8 @@ const ServicesSection = () => (
 
 
 const THeForgeton = () => (
-  <div className="px-6 md:px-16 lg:px-20 flex flex-col justify-center py-8 h-screen">
+  <div
+   className="px-6 md:px-16 lg:px-20 flex flex-col justify-center py-8 h-screen">
     <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 md:mb-8 flex gap-4 md:gap-8 items-center">
       <FaLocationDot className="h-12 md:h-16 w-12 md:w-16" /> Destinations
     </h2>
@@ -535,15 +540,6 @@ const THeForgeton = () => (
 
 {/* /// INDIVIDUAL COMPONENTS */ }
 
-const CandidateCard = ({ name, feedback }: Candidate) => (
-  <div className="flex w-[20%]">
-    <div className="bg-white rounded-lg shadow-lg p-5 text-center">
-      <img src={AllImages.BannerImages.imageUrl} alt={name} className={`${AllImages.BannerImages.StyleClass} w-16 h-16 rounded-full mx-auto mb-4`} />
-      <h3 className="text-lg font-semibold">{name}</h3>
-      <p className="text-sm text-gray-600">{feedback}</p>
-    </div>
-  </div>
-);
 
 const ServiceCard = ({ title, description, extraClass }: { title: string; description: string, extraClass?: string }) => (
   <section id="section-2" className={`w-full bg-cover h-full rounded-3xl overflow-hidden ${extraClass}`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
