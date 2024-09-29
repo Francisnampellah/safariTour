@@ -33,7 +33,7 @@ const PopularPackage = () => {
     <section
       id="section-1"
       ref={sectionRef}
-      className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-8 md:gap-8 rounded-3xl shadow"
+      className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-8 md:gap-8 rounded-3xl"
     >
 
       <div className="flex justify-between">
@@ -57,7 +57,7 @@ const PopularPackage = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row w-full lg:flex-wrap justify-between gap-4 md:px-32">
+      <div className="flex flex-col md:flex-row w-full md:flex-wrap justify-between gap-4 md:px-32">
         {packages.map((item: any) => (
           <TravelAdviceCard key={item.id} item={item} />
         ))}
@@ -85,7 +85,7 @@ const packages = [
   {
     id: 3,
     title: "Luxury Escapes",
-    description: "Indulge in premium experiences tailored to your taste.",
+    description: "Indumde in premium experiences tailored to your taste.",
     imageUrl: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FmYXJpJTIwcG90cmFpdHxlbnwwfDF8MHx8fDA%3D",
   },
   {
