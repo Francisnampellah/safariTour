@@ -38,7 +38,7 @@ const PopularPackage = () => {
 
       <div className="flex justify-between">
         {/* Animate only when the section is in view */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center">
           <motion.div
             initial={{ scale: 0, rotate: -45 }}
             animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -45 }}
