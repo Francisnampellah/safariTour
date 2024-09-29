@@ -57,10 +57,12 @@ const PopularPackage = () => {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full md:flex-wrap justify-between gap-4 md:px-32">
-        {packages.map((item: any) => (
-          <TravelAdviceCard key={item.id} item={item} />
-        ))}
+      <div className="flex flex-col md:flex-row w-full md:flex-wrap justify-center ">
+        <div className='w-fit flex flex-row gap-4 lg:gap-32 flex-wrap'>
+          {packages.map((item: any) => (
+            <TravelAdviceCard key={item.id} item={item} />
+          ))}
+        </div>
       </div>
     </section>
   );
