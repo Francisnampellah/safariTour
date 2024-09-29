@@ -33,8 +33,9 @@ const PopularPackage = () => {
     <section
       id="section-1"
       ref={sectionRef}
-      className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-8 md:gap-8 rounded-3xl"
+      className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-8 md:gap-8 rounded-3xl shadow"
     >
+
       <div className="flex justify-between">
         {/* Animate only when the section is in view */}
         <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center mb-16">
@@ -56,7 +57,7 @@ const PopularPackage = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row w-full lg:flex-wrap justify-between gap-4">
+      <div className="flex flex-col lg:flex-row w-full lg:flex-wrap justify-between gap-4 md:px-32">
         {packages.map((item: any) => (
           <TravelAdviceCard key={item.id} item={item} />
         ))}

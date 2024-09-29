@@ -21,7 +21,7 @@ const TravelAdviceCard = ({ item }: { item: any }) => {
         <img
           src={item.imageUrl}
           alt="Elephant in the wild"
-          className="w-[450px] h-[280px] md:object-fill lg:object-cover  lg:h-[900px] lg:w-[560px] object-cover transform transition-transform duration-1000 ease-out group-hover:scale-110"
+          className="w-[450px] h-[280px] md:object-fill lg:object-cover  lg:h-[750px] lg:w-[465px] object-cover transform transition-transform duration-1000 ease-out group-hover:scale-110"
         />
   
         {/* Bottom content */}
