@@ -177,3 +177,24 @@ html {
 .md_pd {
   padding: 10px 16px;
 }
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Only translate half the container, as we repeat the logos */
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 80s linear infinite;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}

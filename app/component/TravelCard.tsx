@@ -29,7 +29,7 @@ const TravelAdviceCard = ({ item }: { item: any }) => {
                 <button className="border border-white text-white py-[10px] px-4 rounded-full mb-2 text-3xl">
                     Explore Here
                 </button>
-                <h3 className="text-lg font-semibold">Expert Travel Advice</h3>
+                <h3 className="text-base font-semibold">Expert Travel Advice</h3>
                 <p className="text-base">Tips and guides to enhance your travel experience.</p>
             </div>
         </div>

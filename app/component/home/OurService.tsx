@@ -45,7 +45,7 @@ export default function OurService() {
                 </motion.div>
                 OUR SERVICES
             </h2>
-            <div className='px-32 py-4'>
+            <div className='px-16 py-4'>
                 <p className="text-3xl text-gray-600">
                     We are a passionate team <br />of travel  We are a passionate team 
                 </p>

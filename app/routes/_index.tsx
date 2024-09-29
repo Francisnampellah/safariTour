@@ -12,8 +12,9 @@ import { TfiTarget } from "react-icons/tfi";
 import AboutUsSection from "~/component/home/AbouUs";
 import OurService from '../component/home/OurService';
 import PopularPackage from '../component/home/Packages';
-
-
+import Brand from "~/component/home/Brand";
+import { Question } from "~/component/home/FQA";
+import Map from '../component/Map';
 
 
 export const meta: MetaFunction = () => {
@@ -77,83 +78,6 @@ const AllImages = {
     alt: "Banner Image"
   }
 }
-
-const logoArray = [
-  {
-    name: "Ariel",
-    className: {
-      Ariel1: "text-4xl font-bold text-blue-600 uppercase tracking-wider shadow-md bg-gray-100 p-2 rounded-lg",
-    },
-  },
-  {
-    name: "MONGOL",
-    className: {
-      MONGOL1: "text-5xl font-extrabold text-red-500 italic underline decoration-wavy tracking-tight bg-black text-white p-3 rounded-full",
-    },
-  },
-  {
-    name: "TECHBLAST",
-    className: {
-      TECHBLAST1: "text-4xl font-semibold text-green-700 uppercase tracking-wide shadow-lg bg-yellow-100 p-4 border border-green-700 rounded-md",
-    },
-  },
-  {
-    name: "Safari",
-    className: {
-      Safari1: "text-3xl font-medium text-yellow-600 italic border-b-4 border-yellow-300 tracking-widest bg-white p-2 rounded-lg",
-    },
-  },
-  {
-    name: "Ariel",
-    className: {
-      Ariel2: "text-6xl font-black text-pink-500 uppercase shadow-2xl tracking-widest bg-blue-50 p-5 rounded-full",
-    },
-  },
-  {
-    name: "MONGOL",
-    className: {
-      MONGOL2: "text-4xl font-light text-purple-600 italic underline decoration-dashed bg-gray-200 p-3 rounded-md border border-purple-500",
-    },
-  },
-  {
-    name: "TECHBLAST",
-    className: {
-      TECHBLAST2: "text-5xl font-medium text-orange-500 uppercase tracking-tighter shadow-xl bg-gray-900 text-white p-6 rounded-lg",
-    },
-  },
-  {
-    name: "Safari",
-    className: {
-      Safari2: "text-3xl font-bold text-green-500 italic border-b-4 border-green-400 tracking-wider bg-gray-50 p-3 rounded-md",
-    },
-  },
-  {
-    name: "Ariel",
-    className: {
-      Ariel3: "text-4xl font-thin text-indigo-600 uppercase tracking-wide shadow-sm bg-yellow-50 p-4 rounded-lg",
-    },
-  },
-  {
-    name: "MONGOL",
-    className: {
-      MONGOL3: "text-6xl font-bold text-teal-600 italic underline decoration-dotted tracking-wider bg-pink-100 p-5 rounded-full",
-    },
-  },
-  {
-    name: "TECHBLAST",
-    className: {
-      TECHBLAST3: "text-3xl font-extrabold text-blue-800 uppercase shadow-inner bg-red-100 p-4 border border-blue-800 rounded-md",
-    },
-  },
-  {
-    name: "Safari",
-    className: {
-      Safari3: "text-4xl font-medium text-red-600 italic border-b-4 border-gray-500 tracking-wide bg-green-50 p-3 rounded-lg",
-    },
-  },
-];
-
-
 
 type Candidate = {
   name: string;
@@ -221,13 +145,11 @@ export default function Index() {
 
         <div className="flex flex-col">
           <AboutUsSection />
-          <PopularPackage cards={[1,2,3,4]} />
+          <PopularPackage cards={[1, 2, 3, 4]} />
+          <Brand />
           <OurService />
-          <Brands />
-          <THeForgeton />
-          <FQA openIndex={openIndex} handleToggle={handleToggle} />
-          <OurPartner />
-          <LastBanner />
+          <Question openIndex={openIndex} handleToggle={handleToggle} />
+          <Map />
         </div>
       </div>
 
@@ -265,187 +187,6 @@ export default function Index() {
 
 
 
-
-const OurPartner = () => (
-  <section
-    className="flex justify-center h-screen items-center">
-    <div className="flex w-full flex-col md:flex-row flex-wrap gap-6 justify-between max-w-6xl">
-      {candidates.map((candidate, index) => (
-        <div key={index} className="flex flex-1 flex-col bg-white h-48 rounded-lg shadow-lg py-6 px-4 w-full md:w-1/2 lg:w-1/3">
-          <div className="flex flex-row items-center w-full gap-4">
-            <img
-              src={AllImages.BannerImages.imageUrl}
-              alt={candidate.name}
-              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full mb-4"
-            />
-            <h3 className="text-base sm:text-lg font-semibold">{candidate.name}</h3>
-          </div>
-          <p className="text-sm text-gray-600 flex flex-wrap p-2">{candidate.feedback}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-)
-
-
-
-const Brands = () => (
-  <section
-    id="section-3"
-
-    className="w-full overflow-hidden py-16  flex flex-col justify-center h-screen items-center "
-  >
-    <div className="flex w-full gap-8 animate-marquee">
-      {[...logoArray, ...logoArray].map((item, index) => (
-        <div key={index} className={`${item?.className} flex-shrink-0`}>
-          <span className="text-6xl font-extrabold">{item.name}</span>
-        </div>
-      ))}
-    </div>
-  </section>
-);
-
-const LastBanner = () => (
-  <section
-
-    id="section-8" className="py-4 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
-    <div className={`w-full bg-cover h-96 md:h-full rounded-3xl overflow-hidden bg-left-bottom`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-      <div className="w-full h-full bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 py-4">
-        <div className="flex flex-col bottom-4 left-4 text-white">
-          <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-          <p className="text-xs md:text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-)
-
-
-
-const FQA = ({ openIndex, handleToggle }: { openIndex: string | null, handleToggle: any }) => (
-  <section id="section-4" className="px-6 md:px-16 lg:px-20 flex flex-col justify-center h-screen">
-
-    <h2 className="text-2xl md:text-4xl font-semibold text-start text-blue-500 mb-6 flex gap-4 md:gap-8 items-center">
-      <BsFillPatchQuestionFill className="h-10 w-10 md:h-16 md:w-16" /> FQA's
-    </h2>
-
-    <div className="flex flex-col lg:flex-row w-full justify-center items-start gap-6 lg:gap-4">
-
-      <div className="flex flex-col gap-4 flex-1 px-2">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl">
-          Frequently Asked <br /> Questions
-        </h1>
-        <span className="text-sm md:text-lg mb-4 text-gray-600">
-          We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. <br />
-          Our mission is to provide you with the best travel experiences.
-        </span>
-      </div>
-
-      <div className="flex flex-col justify-center items-start flex-1 px-4 md:px-6 lg:px-8">
-        {accordionData.map((item, index) => (
-          <AccordionItem
-            key={index}
-            title={item.title}
-            content={item.content}
-            isOpen={openIndex === index}
-            onToggle={() => handleToggle(index)}
-          />
-        ))}
-      </div>
-    </div>
-
-  </section>
-);
-
-
-const THeForgeton = () => (
-  <div
-    className="px-6 md:px-16 lg:px-20 flex flex-col justify-center py-8 h-screen">
-    <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 md:mb-8 flex gap-4 md:gap-8 items-center">
-      <FaLocationDot className="h-12 md:h-16 w-12 md:w-16" /> Destinations
-    </h2>
-    <h2 className="text-2xl md:text-5xl"> We are a passionate team of travel enthusiasts </h2>
-    <p className="text-base md:text-lg mt-4 text-gray-600">
-      We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. Our mission is to provide you with the best travel experiences.
-    </p>
-
-    <div className="flex flex-col md:flex-row w-full gap-8 md:gap-16 py-8 h-full">
-      <div className="image-container flex flex-1 mx-2 overflow-hidden rounded-3xl">
-        <div
-          className="image-background w-full bg-cover h-full overflow-hidden"
-          style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}
-        ></div>
-        <div className="w-full image-text h-full bg-black flex flex-col justify-end items-end bg-opacity-40 px-4 md:px-8 py-4">
-          <div className="flex flex-col bottom-4 left-4 text-white z-10">
-            <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-            <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8 flex-1 h-full">
-        <div
-          className="w-full bg-cover h-full rounded-3xl overflow-hidden"
-          style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}
-        >
-          <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40 px-4 md:px-8 py-4">
-            <div className="flex flex-col bottom-4 left-4 text-white">
-              <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-              <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="w-full bg-cover h-full rounded-3xl overflow-hidden"
-          style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}
-        >
-          <div className="w-full h-full bg-black flex flex-col justify-end items-end bg-opacity-40 px-4 md:px-8 py-4">
-            <div className="flex flex-col bottom-4 left-4 text-white">
-              <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-              <p className="text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-
-
-
-{/* /// INDIVIDUAL COMPONENTS */ }
-
-
-const ServiceCard = ({ title, description, extraClass }: { title: string; description: string, extraClass?: string }) => (
-  <section id="section-2" className={`w-full bg-cover h-full rounded-3xl overflow-hidden ${extraClass}`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-    <div className="w-full h-full bg-black bg-opacity-40 flex flex-col justify-end items-end px-8 py-4">
-      <div className="text-white">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm mt-1">{description}</p>
-      </div>
-    </div>
-  </section>
-);
-
-const accordionData = [
-  {
-    title: 'Section 1',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet.',
-  },
-  {
-    title: 'Section 2',
-    content:
-      'Pellentesque tincidunt et lectus vel efficitur. Curabitur interdum tincidunt velit.',
-  },
-  {
-    title: 'Section 3',
-    content:
-      'Aliquam erat volutpat. Nullam ut nunc vitae turpis fermentum efficitur.',
-  },
-];
 
 
 
