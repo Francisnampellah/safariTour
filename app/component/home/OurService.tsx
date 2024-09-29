@@ -51,7 +51,7 @@ export default function OurService() {
                 </p>
             </div>
             <div className="flex flex-col md:flex-row gap-4 md:gap-16 h-[60vh] justify-center">
-                <div className="w-full">
+                <div className="w-fit">
                     <BannerSection item={service[0]} />
                 </div>
                 <div className="flex flex-col gap-4 md:gap-8">
@@ -67,8 +67,9 @@ const service = [
     {
         id: 1,
         title: "Expert Travel Advice",
+        extraClass: "w-25%",
         description: "Tips and guides to enhance your travel experience.",
-        imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFmcmljYSUyMHNhZmFyaSUyMGRlc3RpbmF0aW9uJTIwJTIwaG90ZWwlMjBzZXJ2aWNlfGVufDB8MHwwfHx8MA%3D%3D",
+        imageUrl: "https://img.freepik.com/free-photo/breakfast-set-table_140725-3715.jpg?t=st=1727628863~exp=1727632463~hmac=ac7a2b2bcb030d8378c5540150549c47553644b2d2275d7c92a4451b23b29909&w=740",
     },
     {
         id: 2,
