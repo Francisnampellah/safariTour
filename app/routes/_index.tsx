@@ -10,7 +10,8 @@ import AccordionItem from "~/component/Accordion";
 import Header from "~/component/header";
 import { TfiTarget } from "react-icons/tfi";
 import AboutUsSection from "~/component/home/AbouUs";
-import PopularPackage from "~/component/home/Packages";
+import OurService from '../component/home/OurService';
+import PopularPackage from '../component/home/Packages';
 
 
 
@@ -221,7 +222,7 @@ export default function Index() {
         <div className="flex flex-col">
           <AboutUsSection />
           <PopularPackage cards={[1,2,3,4]} />
-          <ServicesSection />
+          <OurService />
           <Brands />
           <THeForgeton />
           <FQA openIndex={openIndex} handleToggle={handleToggle} />
@@ -262,85 +263,6 @@ export default function Index() {
   );
 }
 
-
-
-
-/// MAIN COMPONENTS 
-
-
-
-// const PopularPackage = () => (
-//   <section
-//     id="section-1"
-//     className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-4 md:gap-4 rounded-3xl"
-//   >
-
-//     <div className="flex justify-between">
-
-//       <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center">
-//         <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> POPULAR PACKAGES
-//       </h2>
-//       <IoMdArrowRoundForward className="w-8 h-8 cursor-pointer" />
-//     </div>
-
-//     <div>
-//       <p className="text-2xl text-gray-600">
-//         We are a passionate team of travel enthusiasts <span className="hidden md:flex"> dedicated to making your travel dreams come true.
-//           Dedicated to making your travel dreams come true.</span>
-//       </p>
-//     </div>
-
-//     <div className="flex flex-col md:flex-row w-full gap-4">
-
-//       {[1, 2, 3, 4].map((item) => (
-//         <div key={item} className="flex flex-1 flex-col items-center h-[60vh] bg-contain rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-//           <div className="w-full h-full gap-2 bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 ">
-//             <div className="border border-white rounded-full px-4 py-2 text-white">
-//               Explore Here
-//             </div>
-//             <div className="flex flex-col bottom-4 left-4 text-white w-full">
-//               <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-//               <p className="text-xs md:text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-
-//     </div>
-//   </section>
-// );
-
-
-
-// const AboutUsSection = () => (
-//   <section
-//     id="section-1"
-//     className="flex flex-col justify-center gap-8 md:gap-16 pd_sm lg:px-32 lg:py-[110px]"
-//   >
-//     <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-6 md:mb-8 flex gap-4 md:gap-8 items-center">
-//       <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> ABOUT US
-//     </h2>
-//     <div className="flex flex-col md:flex-row w-full gap-4">
-//       <div className="flex flex-1">
-//         <p className="text-xl md:text-5xl text-gray-600">
-//           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-//           <span className="text-gray-300 block mt-2 md:mt-4">
-//             Our mission is to provide you with the best travel experiences.
-//           </span>
-//         </p>
-//       </div>
-
-//       <div className="flex flex-1 flex-col md:flex-row gap-2">
-//         {[1, 2, 3].map((item) => (
-//           <div key={item} className="flex flex-1 flex-col items-center rounded-lg p-4 m-2">
-//             <span className="text-3xl md:text-4xl font-extrabold">+620</span>
-//             <span className="text-lg md:text-xl text-gray-400">Passionate team</span>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </section>
-// );
 
 
 
@@ -432,46 +354,6 @@ const FQA = ({ openIndex, handleToggle }: { openIndex: string | null, handleTogg
       </div>
     </div>
 
-  </section>
-);
-
-
-const ServicesSection = () => (
-  <section
-    id="section-5"
-    className="flex flex-col justify-start gap-4 h-screen py-8 px-6 md:px-16 scrollSnap"
-  >
-    <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-4 md:gap-8 items-center">
-      <FaConciergeBell className="h-12 md:h-16 w-12 md:w-16" /> OUR SERVICES
-    </h2>
-    <h2 className="text-3xl md:text-5xl">
-      We are a passionate team of travel enthusiasts
-    </h2>
-    <p className="text-base md:text-lg mb-2 text-gray-600">
-      We are a passionate team of travel enthusiasts dedicated to making your
-      travel dreams come true. Our mission is to provide you with the best
-      travel experiences.
-    </p>
-    <div className="flex flex-col md:flex-row gap-4 md:gap-8 h-full">
-      <div className="w-full md:w-[38%]">
-        <ServiceCard
-          title="Expert Travel Advice"
-          description="Tips and guides to enhance your travel experience."
-        />
-      </div>
-      <div className="flex flex-col gap-4 md:gap-8 flex-1">
-        <ServiceCard
-          extraClass={"bg-right-bottom"}
-          title="Personalized Itineraries"
-          description="Tailored plans to suit your interests."
-        />
-        <ServiceCard
-          extraClass={"bg-center"}
-          title="Exclusive Travel Deals"
-          description="Save more with exclusive offers and discounts."
-        />
-      </div>
-    </div>
   </section>
 );
 
