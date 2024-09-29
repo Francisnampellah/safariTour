@@ -1,15 +1,16 @@
 import { MetaFunction } from "@remix-run/node";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FcAbout } from "react-icons/fc";
 import { FaConciergeBell } from "react-icons/fa";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { MdGroups } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdArrowRoundForward } from "react-icons/io";
-
-
-
 import AccordionItem from "~/component/Accordion";
+import Header from "~/component/header";
+import { TfiTarget } from "react-icons/tfi";
+import AboutUsSection from "~/component/home/AbouUs";
+import PopularPackage from "~/component/home/Packages";
 
 
 
@@ -64,6 +65,11 @@ export const meta: MetaFunction = () => {
 
 
 const AllImages = {
+  Heroimage: {
+    imageUrl: "https://images.unsplash.com/photo-1527073620320-77635188c627?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    StyleClass: "bg-cover b-center",
+    alt: "Banner Image"
+  },
   BannerImages: {
     imageUrl: "https://images.unsplash.com/photo-1520124442480-b5c60b0f80c2?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     StyleClass: "bg-cover b-center",
@@ -171,51 +177,39 @@ export default function Index() {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden flex flex-1 flex-col">
       {/* Hero Section */}
       <div className="flex flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]">
-        <div className="w-full shadow-sm bg-cover h-[95vh] md:h-[95vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
+        <div className="w-full shadow-sm bg-cover h-[95vh] md:h-[95vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.Heroimage.imageUrl})` }}>
           <div className="flex flex-col justify-between w-full h-full bg-black bg-opacity-40">
 
-            {/* Header */}
-            <div className="main-container">
-              <div className="kontainer">
-                <div className="item">
-                  <span className="text-xl font-black text-black">Safari</span>
-                </div>
-              </div>
 
-              <div className="flex px-4 md:px-8">
-                <ul className="flex flex-row gap-2 md:gap-4 px-4 md:px-16 text-sm md:text-base">
-                  {["Home", "Services", "FAQ", "Testimonials"].map((link, index) => (
-                    <li key={index} className="hover:cursor-pointer font-black text-white">{link}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+
+            <Header />
 
             {/* Banner */}
-            <div className="flex flex-col justify-center items-center h-full text-center px-4">
+            <div className="flex flex-col justify-center items-center h-full text-center px-2 md:px-4">
               <h1 className="text-3xl md:text-6xl font-semibold text-white">
                 We are a passionate team of travel enthusiasts
               </h1>
               <p className="text-sm md:text-lg text-gray-400 mt-2">
                 Dedicated to making your travel dreams come true. <br />
                 Our mission is to provide you with the best travel experiences.
+
               </p>
             </div>
 
             <div className="flex flex-col justify-between text-white px-4 py-4 md:px-6 md:py-6 gap-4">
-              <div className="flex justify-center items-center p-2 w-32 md:w-48 border border-white rounded-full text-sm md:text-base">
-                <span>Arusha, Tanzania</span>
+              <div className="flex font-bold justify-center items-center p-2 w-fit px-8 py-5 border gap-2 border-white rounded-full text-2xl">
+                <TfiTarget className="" /> <span>Arusha, Tanzania</span>
               </div>
 
               <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-0">
-                <p className="text-xs md:text-sm w-full md:w-96 text-white text-start">
+                <p className="text-md md:text-xl  w-full md:w-96 text-white text-start">
                   We are dedicated to making your travel dreams come true. Our mission is to provide the best experiences.
                 </p>
 
-                <button className="flex justify-center items-center gap-4 border py-2 md:py-1 border-white text-white px-4 rounded-full">
+                <button className="flex justify-center items-center gap-4 border sm_pd font-bold text-2xl border-white text-white rounded-full">
                   Get Started
                   <div className="bg-white flex justify-center items-center text-black rounded-full w-8 md:w-10 h-8 md:h-10">{">"}</div>
                 </button>
@@ -224,15 +218,15 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="px-6 flex flex-col gap-16 pt-16">
-          <PopularPackage  />
-          <AboutUsSection  />
-          <ServicesSection  />
-          <Brands  />
-          <THeForgeton  />
-          <FQA  openIndex={openIndex} handleToggle={handleToggle} />
-          <OurPartner  />
-          <LastBanner  />
+        <div className="flex flex-col">
+          <AboutUsSection />
+          <PopularPackage cards={[1,2,3,4]} />
+          <ServicesSection />
+          <Brands />
+          <THeForgeton />
+          <FQA openIndex={openIndex} handleToggle={handleToggle} />
+          <OurPartner />
+          <LastBanner />
         </div>
       </div>
 
@@ -275,83 +269,84 @@ export default function Index() {
 
 
 
-const PopularPackage = () => (
-  <section
-    id="section-1"
-    className="flex flex-col justify-start py-4 md:py-8 gap-4 md:gap-4 h-screen px-6 md:px-16  "
-  >
+// const PopularPackage = () => (
+//   <section
+//     id="section-1"
+//     className="flex flex-col justify-start px-8 py-5 lg:px-32 lg:py-[110px] gap-4 md:gap-4 rounded-3xl"
+//   >
 
-    <div className="flex justify-between">
+//     <div className="flex justify-between">
 
-      <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-6 md:mb-8 flex gap-4 md:gap-8 items-center">
-        <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> POPULAR PACKAGES
-      </h2>
-      <IoMdArrowRoundForward className="w-8 h-8 cursor-pointer" />
-    </div>
+//       <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center">
+//         <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> POPULAR PACKAGES
+//       </h2>
+//       <IoMdArrowRoundForward className="w-8 h-8 cursor-pointer" />
+//     </div>
 
-    <div>
-      <p className="text-2xl text-gray-600">
-        We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-      </p>
-    </div>
+//     <div>
+//       <p className="text-2xl text-gray-600">
+//         We are a passionate team of travel enthusiasts <span className="hidden md:flex"> dedicated to making your travel dreams come true.
+//           Dedicated to making your travel dreams come true.</span>
+//       </p>
+//     </div>
 
-    <div className="flex flex-col md:flex-row w-full gap-4">
+//     <div className="flex flex-col md:flex-row w-full gap-4">
 
-      {[1, 2, 3, 4].map((item) => (
-        <div key={item} className="flex flex-1 flex-col items-center h-[60vh] bg-contain rounded-3xl overflow-hidden m-2" style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
-          <div className="w-full h-full gap-2 bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 py-4">
-            <div className="border border-white rounded-full px-4 py-2 text-white">
-              Explore Here
-            </div>
-            <div className="flex flex-col bottom-4 left-4 text-white w-full">
-              <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
-              <p className="text-xs md:text-sm mt-1">Tips and guides to enhance your travel experience.</p>
-            </div>
-          </div>
-        </div>
-      ))}
+//       {[1, 2, 3, 4].map((item) => (
+//         <div key={item} className="flex flex-1 flex-col items-center h-[60vh] bg-contain rounded-3xl overflow-hidden " style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
+//           <div className="w-full h-full gap-2 bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 ">
+//             <div className="border border-white rounded-full px-4 py-2 text-white">
+//               Explore Here
+//             </div>
+//             <div className="flex flex-col bottom-4 left-4 text-white w-full">
+//               <h3 className="text-lg md:text-xl font-semibold">Expert Travel Advice</h3>
+//               <p className="text-xs md:text-sm mt-1">Tips and guides to enhance your travel experience.</p>
+//             </div>
+//           </div>
+//         </div>
+//       ))}
 
-    </div>
-  </section>
-);
+//     </div>
+//   </section>
+// );
 
 
 
-const AboutUsSection = () => (
-  <section
-    id="section-1"
-    className="flex flex-col justify-center h-[150vh]  py-4 md:py-16 gap-8 md:gap-16 md:h-screen px-6 md:px-16 "
-  >
-    <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-6 md:mb-8 flex gap-4 md:gap-8 items-center">
-      <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> ABOUT US
-    </h2>
-    <div className="flex flex-col md:flex-row w-full gap-4">
-      <div className="flex flex-1">
-        <p className="text-xl md:text-5xl text-gray-600">
-          We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
-          <span className="text-gray-300 block mt-2 md:mt-4">
-            Our mission is to provide you with the best travel experiences.
-          </span>
-        </p>
-      </div>
+// const AboutUsSection = () => (
+//   <section
+//     id="section-1"
+//     className="flex flex-col justify-center gap-8 md:gap-16 pd_sm lg:px-32 lg:py-[110px]"
+//   >
+//     <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-6 md:mb-8 flex gap-4 md:gap-8 items-center">
+//       <FcAbout className="h-12 md:h-16 w-12 md:w-16" /> ABOUT US
+//     </h2>
+//     <div className="flex flex-col md:flex-row w-full gap-4">
+//       <div className="flex flex-1">
+//         <p className="text-xl md:text-5xl text-gray-600">
+//           We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true.
+//           <span className="text-gray-300 block mt-2 md:mt-4">
+//             Our mission is to provide you with the best travel experiences.
+//           </span>
+//         </p>
+//       </div>
 
-      <div className="flex flex-1 flex-col md:flex-row gap-2">
-        {[1, 2, 3].map((item) => (
-          <div key={item} className="flex flex-1 flex-col items-center rounded-lg p-4 m-2">
-            <span className="text-3xl md:text-4xl font-extrabold">+620</span>
-            <span className="text-lg md:text-xl text-gray-400">Passionate team</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+//       <div className="flex flex-1 flex-col md:flex-row gap-2">
+//         {[1, 2, 3].map((item) => (
+//           <div key={item} className="flex flex-1 flex-col items-center rounded-lg p-4 m-2">
+//             <span className="text-3xl md:text-4xl font-extrabold">+620</span>
+//             <span className="text-lg md:text-xl text-gray-400">Passionate team</span>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
 
 
 
 const OurPartner = () => (
   <section
-   className="flex justify-center h-screen items-center">
+    className="flex justify-center h-screen items-center">
     <div className="flex w-full flex-col md:flex-row flex-wrap gap-6 justify-between max-w-6xl">
       {candidates.map((candidate, index) => (
         <div key={index} className="flex flex-1 flex-col bg-white h-48 rounded-lg shadow-lg py-6 px-4 w-full md:w-1/2 lg:w-1/3">
@@ -375,12 +370,12 @@ const OurPartner = () => (
 const Brands = () => (
   <section
     id="section-3"
-    
+
     className="w-full overflow-hidden py-16  flex flex-col justify-center h-screen items-center "
   >
     <div className="flex w-full gap-8 animate-marquee">
       {[...logoArray, ...logoArray].map((item, index) => (
-        <div key={index} className={`${item?.className[0]} flex-shrink-0`}>
+        <div key={index} className={`${item?.className} flex-shrink-0`}>
           <span className="text-6xl font-extrabold">{item.name}</span>
         </div>
       ))}
@@ -390,8 +385,8 @@ const Brands = () => (
 
 const LastBanner = () => (
   <section
-  
-   id="section-8" className="py-4 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
+
+    id="section-8" className="py-4 md:py-12 lg:py-24 px-4 md:px-12 lg:px-20 flex flex-col justify-center h-screen">
     <div className={`w-full bg-cover h-96 md:h-full rounded-3xl overflow-hidden bg-left-bottom`} style={{ backgroundImage: `url(${AllImages.BannerImages.imageUrl})` }}>
       <div className="w-full h-full bg-black flex flex-col justify-end items-start bg-opacity-40 px-4 md:px-8 py-4">
         <div className="flex flex-col bottom-4 left-4 text-white">
@@ -405,8 +400,8 @@ const LastBanner = () => (
 
 
 
-const FQA = ({ openIndex, handleToggle }: { openIndex: string, handleToggle: any }) => (
-  <section  id="section-4" className="px-6 md:px-16 lg:px-20 flex flex-col justify-center h-screen">
+const FQA = ({ openIndex, handleToggle }: { openIndex: string | null, handleToggle: any }) => (
+  <section id="section-4" className="px-6 md:px-16 lg:px-20 flex flex-col justify-center h-screen">
 
     <h2 className="text-2xl md:text-4xl font-semibold text-start text-blue-500 mb-6 flex gap-4 md:gap-8 items-center">
       <BsFillPatchQuestionFill className="h-10 w-10 md:h-16 md:w-16" /> FQA's
@@ -483,7 +478,7 @@ const ServicesSection = () => (
 
 const THeForgeton = () => (
   <div
-   className="px-6 md:px-16 lg:px-20 flex flex-col justify-center py-8 h-screen">
+    className="px-6 md:px-16 lg:px-20 flex flex-col justify-center py-8 h-screen">
     <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 md:mb-8 flex gap-4 md:gap-8 items-center">
       <FaLocationDot className="h-12 md:h-16 w-12 md:w-16" /> Destinations
     </h2>
