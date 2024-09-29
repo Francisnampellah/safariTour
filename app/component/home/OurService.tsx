@@ -45,16 +45,16 @@ export default function OurService() {
                 </motion.div>
                 OUR SERVICES
             </h2>
-            <div className='px-32'>
+            <div className=''>
                 <p className="text-3xl text-gray-600">
                     We are a passionate team of travel enthusiasts
                 </p>
             </div>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-16 h-full px-48 justify-center">
-                <div className="w-full md:w-[25%]">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-16 h-[60vh] justify-center">
+                <div className="w-full">
                     <BannerSection item={service[0]} />
                 </div>
-                <div className="flex flex-col gap-4 md:gap-8 md:w-[60%]">
+                <div className="flex flex-col gap-4 md:gap-8">
                     <BannerSection item={service[1]} />
                     <BannerSection item={service[2]} />
                 </div>
@@ -68,7 +68,7 @@ const service = [
         id: 1,
         title: "Expert Travel Advice",
         description: "Tips and guides to enhance your travel experience.",
-        imageUrl: "https://plus.unsplash.com/premium_photo-1661868852019-1ee8ef9c30d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWZyaWNhJTIwc2FmYXJpJTIwZGVzdGluYXRpb24lMjAlMjBob3RlbCUyMHNlcnZpY2V8ZW58MHwwfDB8fHww",
+        imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFmcmljYSUyMHNhZmFyaSUyMGRlc3RpbmF0aW9uJTIwJTIwaG90ZWwlMjBzZXJ2aWNlfGVufDB8MHwwfHx8MA%3D%3D",
     },
     {
         id: 2,
