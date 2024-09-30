@@ -26,7 +26,7 @@ const TravelAdviceCard = ({ item }: { item: any }) => {
 
             {/* Bottom content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-transparent to-transparent text-white z-20">
-                <button className="border border-white text-white py-[10px] px-4 rounded-full mb-2 text-3xl">
+                <button className="border border-white text-white py-[5px] px-5 rounded-full mb-2 text-xl">
                     Explore Here
                 </button>
                 <h3 className="text-base font-semibold">Expert Travel Advice</h3>
