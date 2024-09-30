@@ -17,15 +17,15 @@ const AboutUsSection = () => (
           </span>
         </p>
         <button className="flex md:self-start  justify-center items-center gap-4 border sm_pd font-bold text-2xl border-blue-500 text-blue-500 rounded-full mt-4 md:mt-8">
-          Get Started
+          Learn More
         </button>
       </div>
 
       <div className="grid grid-cols-2 gap-2">
-        {[1, 2, 3, 4].map((item) => (
-          <div key={item} className="flex flex-col items-center rounded-lg p-4 m-2">
-            <span className="text-3xl md:text-4xl text-blue-600 font-extrabold">+620</span>
-            <span className="text-lg md:text-xl text-gray-400">Passionate team</span>
+        {data.map((item) => (
+          <div key={item.id} className="flex flex-col items-center rounded-lg p-4 m-2">
+            <span className="text-3xl md:text-4xl text-blue-600 font-extrabold">{item.count}</span>
+            <span className="text-lg md:text-xl text-gray-400">{item.description}</span>
           </div>
         ))}
       </div>
@@ -34,3 +34,12 @@ const AboutUsSection = () => (
 );
 
 export default AboutUsSection
+
+
+
+const data = [
+  { id: 1, count: '+620', description: 'Passionate team' },
+  { id: 2, count: '+450', description: 'Successful projects' },
+  { id: 3, count: '+800', description: 'Happy clients' },
+  { id: 4, count: '+1,200', description: 'Innovative solutions' },
+];
