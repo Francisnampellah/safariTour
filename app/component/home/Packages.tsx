@@ -52,7 +52,7 @@ const PopularPackage = () => {
       </div>
 
       <div className='px-16'>
-        <p className="text-3xl text-gray-600">
+        <p className="text-2xl text-gray-600">
           We are a passionate team of travel enthusiasts  We are a passionate team
         </p>
       </div>
