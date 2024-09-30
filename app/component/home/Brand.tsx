@@ -7,11 +7,14 @@ export default function Brand() {
             className="w-full overflow-hidden py-16 flex flex-col justify-center items-center"
         >
             <div className="flex w-full gap-8 animate-marquee">
-                {[...logoArray, ...logoArray].map((item, index) => (
+
+
+                
+                {/* {[...logoArray, ...logoArray].map((item, index) => (
                     <div key={index} className="flex-shrink-0">
                         <span className={`${Object.values(item.className)[0]}`}>{item.name}</span>
                     </div>
-                ))}
+                ))} */}
             </div>
         </section>
     );

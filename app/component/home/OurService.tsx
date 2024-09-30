@@ -35,9 +35,9 @@ export default function OurService() {
         <section
             id="section-5"
             ref={sectionRef}
-            className="flex flex-col justify-start gap-4 py-8 scrollSnap lg_pd"
+            className="flex flex-col justify-start gap-4 py-8 scrollSnap lg_pd md:px-32"
         >
-            <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-4 md:gap-8 items-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-4 md:gap-8 items-center md:px-8" >
                 <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -45 }}
@@ -71,7 +71,7 @@ const service = [
         title: "Expert Travel Advice",
         extraClass: "w-25%",
         description: "Tips and guides to enhance your travel experience.",
-        imageUrl: "https://img.freepik.com/free-photo/woman-having-tropical-healthy-breakfast-villa-floating-table_343596-1182.jpg?t=st=1727688391~exp=1727691991~hmac=80abdb3fe0300937d424b8b5e90066da3f0be96a6034201afc35cca6a7afc3e7&w=1060https://img.freepik.com/free-photo/breakfast-set-table_140725-3715.jpg?t=st=1727628863~exp=1727632463~hmac=ac7a2b2bcb030d8378c5540150549c47553644b2d2275d7c92a4451b23b29909&w=740",
+        imageUrl: "https://img.freepik.com/free-photo/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food_1150-26411.jpg?t=st=1727688569~exp=1727692169~hmac=56f929152c331ed9362d473332f4f57ff114e0f6fe44bef71d432060857379aa&w=1060",
     },
     {
         id: 2,

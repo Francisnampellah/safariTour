@@ -9,6 +9,8 @@ import Brand from "~/component/home/Brand";
 import { Question } from "~/component/home/FQA";
 import Map from '../component/Map';
 import Benefits from '../component/home/Benefits';
+import GoogleMapComponent from "~/component/googleMap";
+import GoogleMapIframe from "../component/Map";
 
 
 export const meta: MetaFunction = () => {
@@ -104,7 +106,7 @@ export default function Index() {
           <Brand />
           <OurService />
           <Question openIndex={openIndex} handleToggle={handleToggle} />
-          <Map />
+          <GoogleMapIframe />
         </div>
       </div>
 
