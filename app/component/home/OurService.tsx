@@ -47,7 +47,7 @@ export default function OurService() {
                 </motion.div>
                 Our Destinations
             </h2>
-            <div className='md:px-16 py-4'>
+            <div className='md:px-16'>
                 <p className="text-3xl text-gray-600">
                     We are a passionate team of travel  We are a passionate team
                 </p>

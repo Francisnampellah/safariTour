@@ -51,7 +51,7 @@ const PopularPackage = () => {
         <IoMdArrowRoundForward className="w-8 h-8 cursor-pointer" />
       </div>
 
-      <div className='px-16 py-4'>
+      <div className='px-16'>
         <p className="text-3xl text-gray-600">
           We are a passionate team of travel enthusiasts  We are a passionate team
         </p>
