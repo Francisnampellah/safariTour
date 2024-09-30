@@ -39,8 +39,8 @@ export default function OurService() {
         >
             <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-4 md:gap-8 items-center md:px-8" >
                 <motion.div
-                    initial={{ scale: 0, rotate: -45 }}
-                    animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -45 }}
+                    initial={{ x: -200, opacity: 0 }}
+                    animate={isInView ? { x: 0, opacity: 1 } : { x: -200, opacity: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <ImLocation className="h-12 md:h-16 w-12 md:w-16 text-green-500" />
