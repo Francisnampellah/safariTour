@@ -3,7 +3,7 @@ import { BsFillPatchQuestionFill } from "react-icons/bs";
 import AccordionItem from '../Accordion';
 
 
-export const Question = ({ openIndex, handleToggle }: { openIndex: string | null, handleToggle: any }) => (
+export const Question = ({ openIndex, handleToggle }: { openIndex: any, handleToggle: any }) => (
     <section id="section-4" className="px-6 md:px-32 lg:px-20 flex flex-col justify-center">
 
         <h2 className="text-2xl md:text-4xl font-semibold text-start text-blue-500 mb-6 flex gap-4 md:gap-8 items-center">

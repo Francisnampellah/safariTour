@@ -1,12 +1,20 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  // Ensure JIT mode is enabled for on-demand class generation
+  mode: 'jit',
+
+  // Specify the files to be purged of unused CSS (simplified to match all relevant files)
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
     extend: {
+      // Custom `clipPath` for polygonal shapes
       clipPath: {
-        'custom': 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', // This creates an inverted effect
+        'custom': 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', // Inverted effect
       },
+
+      // Custom `fontFamily` setup
       fontFamily: {
         sans: [
           'Poppins', 'sans-serif',
@@ -23,8 +31,10 @@ export default {
       },
     },
   },
+
   plugins: [
-    function({ addUtilities }) {
+    // Plugin to hide scrollbars across browsers
+    function ({ addUtilities }: { addUtilities: Function }) {
       addUtilities({
         '.scrollbar-hide': {
           '-ms-overflow-style': 'none',  // IE and Edge
@@ -36,6 +46,4 @@ export default {
       });
     },
   ],
-} satisfies Config
-
-
+} satisfies Config;

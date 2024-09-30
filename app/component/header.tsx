@@ -27,7 +27,7 @@ export default function Header() {
             <div className="flex px-4 xl:px-12 pt-5">
                 <ul className="glassy lg:flex flex-row gap-2 hidden md:gap-4 px-4 py-[10px] text-sm md:text-base">
                     {links.map((link, index) => (
-                        <Link key={index} to={link.href} className={`hover:cursor-pointer px-4 py-[10px] rounded-2xl  text-xl ${link.state ? "bg-white border-2 border-[rgba(0, 0, 0, 0.18)] shadow-2xl text-black font-black  " : "text-white font-semibold"} `}>{link.title}</Link>
+                        <Link key={index} to={link.href} className={`hover:cursor-pointer px-2 py-[5px] rounded-2xl  text-lg ${link.state ? "bg-white border-2 border-[rgba(0, 0, 0, 0.18)] shadow-2xl text-black font-black  " : "text-white font-semibold"} `}>{link.title}</Link>
                     ))}
                 </ul>
 
