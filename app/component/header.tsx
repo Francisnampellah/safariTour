@@ -13,7 +13,7 @@ export default function Header() {
         { title: "Home", href: "/", state: true },
         { title: "Services", href: "/services", state: false },
         { title: "FAQ", href: "/faq", state: false },
-        { title: "Testimonials", href: "/testimonials", state: false }
+        { title: "AboutUs", href: "/aboutus", state: false }
     ]
 
     return (
