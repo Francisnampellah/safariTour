@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from "react-icons/io";
 
 
 export default function Benefits() {
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const prevSlide = () => {
@@ -13,6 +12,12 @@ export default function Benefits() {
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
+
+    // Automatically slide images every 5 seconds
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 3000); // Change slide every 5 seconds
+        return () => clearInterval(interval); // Clear interval on component unmount
+    }, []);
 
 
     return (
@@ -36,18 +41,27 @@ export default function Benefits() {
                     </div>
                 ))}
             </div >
-
             <div className="w-full flex flex-col items-center justify-center">
                 <div className="relative w-[90%] md:w-[80%] h-96 overflow-hidden">
+                    <div className="absolute top-0 z-20 left-0 right-0 text-white">
+                        <div className="main-container">
+                            <div className="kontainer">
+                                <div className="itemCard">
+                                    <span className="text-xl font-black text-black">Manyara</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {/* Image Container */}
-                    <div className="absolute w-full h-full flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    <div className="absolute w-full h-full flex transition-transform duration-500 rounded-3xl" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                         {images.map((image, index) => (
-                            <img
-                                key={index}
-                                className='rounded-3xl object-cover w-full h-full object-center'
-                                src={image}
-                                alt={`Slide ${index}`}
-                            />
+                            <div key={index} className="flex-shrink-0 w-full h-full rounded-3xl overflow-hidden">
+                                <img
+                                    className='rounded-3xl object-cover w-full h-full object-center'
+                                    src={image}
+                                    alt={`Slide ${index}`}
+                                />
+                            </div>
                         ))}
                     </div>
 
@@ -79,7 +93,6 @@ export default function Benefits() {
             </div>
 
 
-
         </div>
     )
 }
@@ -88,8 +101,8 @@ export default function Benefits() {
 
 const images = [
     "https://images.unsplash.com/photo-1549182209-fccf0dd0893b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "https://images.unsplash.com/photo-1518459384564-ecfd8e80721f?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1669021820358-317111184ede?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
 
 const Benefit = [

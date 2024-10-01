@@ -33,12 +33,12 @@ const PopularPackage = () => {
     <section
       id="section-1"
       ref={sectionRef}
-      className="flex flex-col justify-start px-8 py-5 lg:px-16 lg:py-[110px] gap-8 md:gap-8 rounded-3xl"
+      className="flex flex-col justify-start px-8 py-5 lg:px-16 lg:py-[110px] gap-8 md:gap-8 rounded-3xl "
     >
 
       <div className="flex justify-between">
         {/* Animate only when the section is in view */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center">
+        <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 flex gap-4 md:gap-8 items-center md:px-16">
           <motion.div
             initial={{ scale: 0, rotate: -45 }}
             animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -45 }}
@@ -46,14 +46,14 @@ const PopularPackage = () => {
           >
             <FaFireAlt className="h-12 md:h-16 w-12 md:w-16 text-red-500" />
           </motion.div>
-          POPULAR PACKAGES
+          Our Popular Packages
         </h2>
         <IoMdArrowRoundForward className="w-8 h-8 cursor-pointer" />
       </div>
 
-      <div className='px-32 py-4'>
-        <p className="text-3xl text-gray-600">
-          We are a passionate team of <br/>travel enthusiasts  We are a passionate team 
+      <div className='px-16'>
+        <p className="text-2xl text-gray-600">
+          We are a passionate team of travel enthusiasts  We are a passionate team
         </p>
       </div>
 

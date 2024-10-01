@@ -3,6 +3,17 @@ import React from 'react';
 const BannerSection = ({ item }: { item: any }) => {
     return (
         <section className={`relative w-full h-full rounded-3xl overflow-hidden group ${item.extraClass}`}>
+            <div className="absolute top-0 z-20 left-0 right-0 text-white">
+                <div className="main-container">
+                    <div className="kontainer">
+                        <div className="itemCard">
+                            <span className="text-xl font-black text-black">Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             {/* Image with zoom effect on hover */}
             <img
                 src={item.imageUrl}

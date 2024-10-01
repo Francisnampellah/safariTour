@@ -1,17 +1,29 @@
 import React from 'react';
+import { ArrayOurPartner } from '../OurPartners';
 
 export default function Brand() {
     return (
         <section
             id="section-3"
-            className="w-full overflow-hidden py-16 flex flex-col justify-center items-center"
+            className="w-full overflow-hidden py-16 flex flex-col justify-center items-center md:gap-8 "
         >
-            <div className="flex w-full gap-8 animate-marquee">
-                {[...logoArray, ...logoArray].map((item, index) => (
+
+            <h1 className='text-3xl md:text-4xl font-black'>Our Partner</h1>
+            <div className="flex w-full gap-8 justify-around md:px-16">
+
+                {
+                    ArrayOurPartner.map((item, index) => (
+                        <div key={index} className='flex justify-center items-center' >
+                            <img src={item} alt='logo' className={`w-[30%]`} />
+                        </div>
+                    ))
+                }
+
+                {/* {[...logoArray, ...logoArray].map((item, index) => (
                     <div key={index} className="flex-shrink-0">
                         <span className={`${Object.values(item.className)[0]}`}>{item.name}</span>
                     </div>
-                ))}
+                ))} */}
             </div>
         </section>
     );
