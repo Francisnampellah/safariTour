@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
 
 const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   return (
-    <div className="bg-white p-2 w-fit rounded-2xl flex items-center justify-center flex-col shadow-lg">
+    <div className="bg-white p-2 w-fit rounded-2xl flex items-center justify-center flex-col shadow">
       <div className="">
         <img src={member.imageUrl} alt={member.name} className="rounded-2xl  w-48" />
       </div>

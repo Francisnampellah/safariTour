@@ -21,7 +21,7 @@ const services = [
 
 const Service = () => {
   return (
-    <section className="h-auto overflow-y-hidden flex w-full flex-col gap-16 my-8 ">
+    <section className="h-auto flex w-full flex-col gap-8 my-8">
       <div className="px-4">
         {/* Header Section */}
         <div className="px-16 gap-8 my-8 flex flex-col">
@@ -63,9 +63,9 @@ const Service = () => {
           {/* Right Side - Image */}
           <div className="">
             <img
-              src="https://plus.unsplash.com/premium_photo-1670148434900-5f0af77ba500?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://media.gettyimages.com/id/1018301704/photo/always-eager-to-provide-guests-with-the-best-service.jpg?s=2048x2048&w=gi&k=20&c=bcWDJOSe40hQaEUnr_jbRPyv82313jDv2QirCDaLeW8="
               alt="service"
-              className="w-[660px] h-[373px] rounded-3xl shadow-lg"
+              className="w-[600px] h-[373px] rounded-3xl shadow-lg object-cover"
             />
           </div>
         </div>

@@ -5,13 +5,13 @@ const LeftSections = [
     title: "Experienced Agent",
     description:
       "Our experience and flying hours have proven that the satisfaction of customers who keep coming back and the various things we have gone through are our basis for providing the best and always being ready to provide solutions for you.",
-    img: "https://via.placeholder.com/300", // Replace with actual image URL
+    img: "https://images.unsplash.com/photo-1567636788276-40a47795ba4d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with actual image URL
   },
   {
     title: "Best Travel Provider",
     description:
       "Your travel memories and stories are our top priority. We ensure that the entire process of your holiday goes well and is unforgettable.",
-    img: "https://via.placeholder.com/300",
+    img: "https://media.gettyimages.com/id/1087028804/photo/portrait-of-hunting-cheetah-in-high-grass.jpg?s=2048x2048&w=gi&k=20&c=ggwchcWnNamptnWKxaK5t8lkP5gdsGtL8M5NRV_KHbs=",
   }
 
   // Add more sections as needed
@@ -22,13 +22,13 @@ const RightSections = [
     title: "Luxury Travel",
     description:
       "Experience the ultimate in luxury travel with our exclusive packages designed to provide you with unparalleled comfort and style.",
-    img: "https://via.placeholder.com/300", // Replace with actual image URL
+    img: "https://media.gettyimages.com/id/1018301750/photo/enjoying-drinks-and-sunsets-on-our-vacation.jpg?s=2048x2048&w=gi&k=20&c=iDDsM8tWUsRyvA5uU1qZG6tPNTG5E9o25vXA9Ou7CZ0=", // Replace with actual image URL
   },
   {
     title: "Adventure Tours",
     description:
       "Embark on thrilling adventures and explore the world's most exciting destinations with our specially curated adventure tours.",
-    img: "https://via.placeholder.com/300",
+    img: "https://media.gettyimages.com/id/82999960/photo/tourists-photographing-male-lion.webp?s=2048x2048&w=gi&k=20&c=QefmgkfhEYrunOcJFKWtJQSfF8Cen90AwWn9GL02lW0=",
   }
 
   // Add more sections as needed
@@ -39,7 +39,7 @@ const WhyUs = () => {
   const maxSections = Math.max(LeftSections.length, RightSections.length);
 
   return (
-    <div className="h-auto overflow-y-hidden flex w-full flex-col gap-8 my-8 ">
+    <div className="h-auto flex w-full flex-col gap-8 my-8 ">
 
       <div className="px-16 gap-8 my-8 flex flex-col">
         <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">Why Safari</span></h1>

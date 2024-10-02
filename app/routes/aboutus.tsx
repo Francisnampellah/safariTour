@@ -3,14 +3,13 @@ import OurTeam from '~/component/aboutus/ourTeam'
 import Service from '~/component/aboutus/service'
 import WhyUs from '~/component/aboutus/whyUs'
 import Header from '~/component/header'
-import { TfiTarget } from 'react-icons/tfi'
 import Footer from '~/component/Footer'
 
 
 
 const AllImages = {
   Heroimage: {
-    imageUrl: "https://images.unsplash.com/photo-1527073620320-77635188c627?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageUrl: "https://img.freepik.com/free-photo/group-colombian-male-friends-spending-time-together-having-fun_23-2151356469.jpg?t=st=1727858217~exp=1727861817~hmac=3f91fc96bef75d705338264363653ba6d49dc6dce7ee88da5c138a67e4a08290&w=1060",
     StyleClass: "bg-cover b-center",
     alt: "Banner Image"
   },
@@ -37,7 +36,7 @@ export default function aboutus() {
       </div>
       <WhyUs />
       <Service />
-      {/* <OurTeam /> */}
+      <OurTeam />
       <Footer />
     </div>
   )

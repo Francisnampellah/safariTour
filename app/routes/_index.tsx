@@ -2,7 +2,6 @@ import { MetaFunction } from "@remix-run/node";
 import { useState, useEffect, useRef } from "react";
 import Header from "~/component/header";
 import { TfiTarget } from "react-icons/tfi";
-import AboutUsSection from "~/component/home/AbouUs";
 import OurService from '../component/home/OurService';
 import PopularPackage from '../component/home/Packages';
 import Brand from "~/component/home/Brand";
@@ -12,6 +11,7 @@ import Benefits from '../component/home/Benefits';
 import GoogleMapComponent from "~/component/googleMap";
 import GoogleMapIframe from "../component/Map";
 import Footer from "../component/Footer";
+import AboutUsSection from '~/component/home/AbouUs';
 
 
 export const meta: MetaFunction = () => {
