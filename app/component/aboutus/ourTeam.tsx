@@ -1,5 +1,7 @@
 import React from 'react';
 import TeamMemberCard, { teamMembers } from '../TeamMemberCard';
+import { FaUserFriends } from "react-icons/fa";
+
 
 
 const OurTeam = () => {

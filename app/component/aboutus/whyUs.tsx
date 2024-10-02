@@ -1,5 +1,7 @@
 import React from "react";
 
+import { LuCheckCircle } from "react-icons/lu";
+
 const LeftSections = [
   {
     title: "Experienced Agent",
@@ -42,7 +44,7 @@ const WhyUs = () => {
     <div className="h-auto flex w-full flex-col gap-8 my-8 ">
 
       <div className="px-16 gap-8 my-8 flex flex-col">
-        <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">Why Safari</span></h1>
+        <div className="text-blue-600 text-3xl flex gap-4" > <LuCheckCircle className="text-5xl" /> <span className="font-semibold">Why Safari</span></div>
         <h1 className="text-5xl text-start">
           We Are a World Famous Travel Agency
         </h1>

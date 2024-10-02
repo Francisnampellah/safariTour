@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
+import { PiCompassRoseBold } from "react-icons/pi";
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -20,16 +22,52 @@ const services = [
 ];
 
 const Service = () => {
+
+
+
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when 20% of the section is visible
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="h-auto flex w-full flex-col gap-8 my-8">
+    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8">
       <div className="px-4">
         {/* Header Section */}
         <div className="px-16 gap-8 my-8 flex flex-col">
-          <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">Service</span></h1>
+          <div className="text-blue-600 text-3xl flex gap-4">
+            {/* Animated Compass Icon */}
+            <motion.div
+              initial={{ scale: 0.8, rotate: 0, opacity: 0 }} // Start with smaller size and no rotation
+              animate={isInView ? { scale: 1.25, rotate: 180, opacity: 1 } : { scale: 0.8, rotate: 0, opacity: 0 }} // Scale up and rotate on visibility
+              transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            >
+              <PiCompassRoseBold className="h-8 md:h-12 w-8 md:w-12 text-5xl text-green-500" />
+            </motion.div>
+            <span className="font-semibold">Our Service</span>
+          </div>
           <h1 className="text-5xl text-start">
             We Are a World Famous Travel Agency
           </h1>
         </div>
+
 
         {/* Content Section */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-16 w-full">
