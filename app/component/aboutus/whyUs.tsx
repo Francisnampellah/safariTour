@@ -41,7 +41,7 @@ const WhyUs = () => {
   const maxSections = Math.max(LeftSections.length, RightSections.length);
 
   return (
-    <div className="h-auto flex w-full flex-col gap-8 my-8 ">
+    <div className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 py-16">
 
       <div className="px-16 gap-8 my-8 flex flex-col">
         <div className="text-blue-600 text-3xl flex gap-4" > <LuCheckCircle className="text-5xl" /> <span className="font-semibold">Why Safari</span></div>
@@ -50,7 +50,7 @@ const WhyUs = () => {
         </h1>
       </div>
 
-      <div className="relative overflow-y-auto">
+      <div className="relative ">
         {/* Central Vertical Line */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
@@ -73,10 +73,10 @@ const WhyUs = () => {
                       />
                       <div className="w-[450px] h-[280px] flex justify-end items-end flex-col self-end">
 
-                        <h2 className="text-2xl text-left font-semibold mb-2">
+                        <h2 className="text-3xl text-left font-semibold mb-2">
                           {left.title}
                         </h2>
-                        <p className="text-gray-700">{left.description}</p>
+                        <p className="text-gray-700  text-2xl">{left.description}</p>
                       </div>
                     </div>
                   )}
@@ -95,10 +95,10 @@ const WhyUs = () => {
                   {right && (
                     <div className="text-left flex flex-col">
                       <div className="w-[450px] h-[280px] flex justify-start flex-col self-start items-start">
-                        <h2 className="text-2xl font-semibold">
+                        <h2 className="text-3xl font-semibold">
                           {right.title}
                         </h2>
-                        <p className="text-gray-700">{right.description}</p>
+                        <p className="text-gray-700 text-2xl">{right.description}</p>
                       </div>
                       <img
                         src={right.img}

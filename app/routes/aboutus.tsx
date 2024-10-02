@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import OurTeam from '~/component/aboutus/ourTeam'
 import Service from '~/component/aboutus/service'
 import WhyUs from '~/component/aboutus/whyUs'
@@ -25,10 +25,21 @@ const AllImages = {
 
 
 export default function aboutus() {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    // Trigger the zoom effect on mount
+    const timer = setTimeout(() => {
+      setIsZoomed(true);
+    }, 100); // Short delay to trigger the animation
+
+    return () => clearTimeout(timer); // Clean up the timer
+  }, []);
+
   return (
     <div className='flex flex-col w-full'>
       <div className='flex h-auto flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]'>
-        <div className="relative w-full shadow-sm bg-cover h-[60vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AboutUS})` }}>
+        <div className="relative w-full shadow-sm bg-cover h-[60vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.Heroimage.imageUrl})` }}>
           <div className="flex flex-col justify-between w-full h-full bg-black bg-opacity-40 ">
             <Header />
           </div>
@@ -40,5 +51,43 @@ export default function aboutus() {
       <OurTeam />
       <Footer />
     </div>
-  )
+  );
 }
+
+
+
+// <div className='flex flex-col w-full'>
+// <div className='flex h-auto flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]'>
+//   <div className="relative w-full shadow-sm bg-cover h-[60vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.Heroimage.imageUrl})` }}>
+//     <div className="flex flex-col justify-between w-full h-full bg-black bg-opacity-40 ">
+//       <Header />
+//     </div>
+//   </div>
+
+// </div>
+// <WhyUs />
+// <Service />
+// <OurTeam />
+// <Footer />
+// </div>
+
+
+
+{/* <div className='flex flex-col w-full'>
+<div className='flex h-auto flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]'>
+  <div className="relative w-full shadow-sm h-[60vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center">
+    <img
+      src={AboutUS}
+      alt="About Us"
+      className={`w-full h-full object-cover transition-transform duration-700 ${isZoomed ? 'scale-110' : 'scale-100'}`}
+    />
+    <div className="z-49 flex flex-col justify-between w-full h-full bg-black bg-opacity-40">
+      <Header />
+    </div>
+  </div>
+</div>
+<WhyUs />
+<Service />
+<OurTeam />
+<Footer />
+</div> */}

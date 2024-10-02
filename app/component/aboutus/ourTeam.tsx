@@ -1,25 +1,61 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from "react";
 import TeamMemberCard, { teamMembers } from '../TeamMemberCard';
 import { FaUserFriends } from "react-icons/fa";
-
+import { motion } from 'framer-motion';
 
 
 const OurTeam = () => {
+
+
+
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 } // Trigger when 20% of the section is visible
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="h-auto overflow-y-hidden flex w-full flex-col gap-16 my-8">
+    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8 md:px-32">
       <div>
-        <div className="px-16 gap-8 my-8 flex flex-col">
-          <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">
-            Our Team</span></h1>
-          <h1 className="text-5xl text-start">
-            We Are a World Famous Travel Agency
-          </h1>
-        </div>
-        <div className="flex flex-row justify-center space-x-10">
-          {/* Team Member  */}
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
-          ))}
+        <div className="py-16">
+          <div className="px-16 gap-8 my-8 flex flex-col">
+            <div className="text-blue-600 text-3xl flex gap-4">
+              {/* Animated Compass Icon */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }} // Start smaller and transparent
+                animate={isInView ? { scale: 1.1, opacity: 1 } : { scale: 0.8, opacity: 0 }} // Slight scale up for a pop-up effect on visibility
+                transition={{ duration: 1, ease: "easeOut" }} // Fast and smo
+              >
+                <FaUserFriends className="h-8 md:h-12 w-8 md:w-12 text-5xl text-red-500" />
+              </motion.div>
+              <span className="font-semibold">Our Team</span>
+            </div>
+            <h1 className="text-5xl text-start">
+              We Are a World Famous Travel Agency
+            </h1>
+          </div>
+          <div className="flex flex-row justify-center space-x-10">
+            {/* Team Member  */}
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </div>
         </div>
 
         {/* Background Image with Black Overlay and Text */}
