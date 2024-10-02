@@ -17,10 +17,10 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: 'Maria John',
+    name: 'Smith John',
     position: 'Tourist Guider',
     imageUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1528109688329-6a043167789d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvdHJhaXQlMjBndWlkZXJ8ZW58MHwwfDB8fHww',
     socialMedia: [
       { icon: FaFacebook, color: 'blue' },
       { icon: FaInstagram, color: 'pink' },
@@ -29,10 +29,10 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: 'Hannah Smith',
+    name: 'Lisimo Kiso',
     position: 'Manager',
     imageUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1643990083137-34669413e267?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     socialMedia: [
       { icon: FaFacebook, color: 'blue' },
       { icon: FaInstagram, color: 'pink' },
@@ -41,10 +41,10 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 3,
-    name: 'Hannah Smith',
+    name: 'Hannah Morio',
     position: 'Manager',
     imageUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1520528105264-de3db89485f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     socialMedia: [
       { icon: FaFacebook, color: 'blue' },
       { icon: FaInstagram, color: 'pink' },
@@ -53,10 +53,10 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 4,
-    name: 'Hannah Smith',
+    name: 'Rahmia Said',
     position: 'Manager',
     imageUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1709222584968-01132f53413f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     socialMedia: [
       { icon: FaFacebook, color: 'blue' },
       { icon: FaInstagram, color: 'pink' },
@@ -71,7 +71,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   return (
     <div className="bg-white p-2 w-fit rounded-2xl flex items-center justify-center flex-col shadow">
       <div className="">
-        <img src={member.imageUrl} alt={member.name} className="rounded-2xl  w-48" />
+        <img src={member.imageUrl} alt={member.name} className="rounded-3xl  w-64 h-72 object-cover" />
       </div>
       <div className=" w-full p-2">
         <div className="font-bold">
