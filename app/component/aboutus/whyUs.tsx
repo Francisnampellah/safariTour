@@ -44,7 +44,7 @@ const WhyUs = () => {
     <div className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 py-16">
 
       <div className="px-16 gap-8 my-8 flex flex-col">
-        <div className="text-blue-600 text-3xl flex gap-4" > <LuCheckCircle className="text-5xl" /> <span className="font-semibold">Why Safari</span></div>
+        <div className="text-blue-600 text-3xl flex gap-4 items-end" > <LuCheckCircle className="text-5xl" /> <span className="font-semibold">Why Safari</span></div>
         <h1 className="text-5xl text-start">
           We Are a World Famous Travel Agency
         </h1>

@@ -35,7 +35,7 @@ const OurTeam = () => {
       <div>
         <div className="py-16">
           <div className="px-16 gap-8 my-8 flex flex-col">
-            <div className="text-blue-600 text-3xl flex gap-4">
+            <div className="text-blue-600 text-3xl flex gap-4 items-end">
               {/* Animated Compass Icon */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }} // Start smaller and transparent

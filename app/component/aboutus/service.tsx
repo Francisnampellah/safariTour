@@ -48,10 +48,10 @@ const Service = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 bg-slate-200 py-16 shadow">
+    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 bg-slate-200 py-16 mb-8 shadow">
       <div className="px-4">
         {/* Header Section */}
-        <div className="px-16 gap-8 my-8 flex flex-col">
+        <div className="px-16 gap-8 my-8 flex flex-col item-end">
           <div className="text-blue-600 text-3xl flex gap-4">
             {/* Animated Compass Icon */}
             <motion.div
