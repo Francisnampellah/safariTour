@@ -13,7 +13,7 @@ const LeftSections = [
       "Your travel memories and stories are our top priority. We ensure that the entire process of your holiday goes well and is unforgettable.",
     img: "https://via.placeholder.com/300",
   }
- 
+
   // Add more sections as needed
 ];
 
@@ -30,7 +30,7 @@ const RightSections = [
       "Embark on thrilling adventures and explore the world's most exciting destinations with our specially curated adventure tours.",
     img: "https://via.placeholder.com/300",
   }
- 
+
   // Add more sections as needed
 ];
 
@@ -39,10 +39,14 @@ const WhyUs = () => {
   const maxSections = Math.max(LeftSections.length, RightSections.length);
 
   return (
-    <div className="h-auto mx-auto py-10  px-32 overflow-y-hidden">
-      <h1 className="text-4xl font-bold text-center mb-12">
-        We Are a World Famous Travel Agency
-      </h1>
+    <div className="h-auto overflow-y-hidden flex w-full flex-col gap-8 my-8 ">
+
+      <div className="px-16 gap-8 my-8 flex flex-col">
+        <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">Why Safari</span></h1>
+        <h1 className="text-5xl text-start">
+          We Are a World Famous Travel Agency
+        </h1>
+      </div>
 
       <div className="relative overflow-y-auto">
         {/* Central Vertical Line */}
@@ -53,23 +57,24 @@ const WhyUs = () => {
           {Array.from({ length: maxSections }).map((_, index) => {
             const left = LeftSections[index];
             const right = RightSections[index];
+
             return (
-              <div key={index} className="flex items-center">
+              <div key={index} className="flex items-center gap-16">
                 {/* Left Section */}
-                <div className="w-1/2 ">
+                <div className="w-1/2">
                   {left && (
                     <div className="text-right flex justify-end flex-col">
                       <img
                         src={left.img}
                         alt={left.title}
-                        className="w-96 h-[239px] rounded-lg self-end shadow-lg"
+                        className="w-[450px] h-[280px] rounded-3xl self-end shadow-lg"
                       />
-                      <div className="w-96 h-[239px] flex justify-end flex-col self-end">
+                      <div className="w-[450px] h-[280px] flex justify-end items-end flex-col self-end">
 
-                      <h2 className="text-2xl font-semibold mb-2">
-                        {left.title}
-                      </h2>
-                      <p className="text-gray-700">{left.description}</p>
+                        <h2 className="text-2xl text-left font-semibold mb-2">
+                          {left.title}
+                        </h2>
+                        <p className="text-gray-700">{left.description}</p>
                       </div>
                     </div>
                   )}
@@ -78,17 +83,17 @@ const WhyUs = () => {
                 {/* Central Dots */}
                 <div className="w-16 flex flex-col items-center space-y-60">
                   <div className="w-5 h-5 bg-blue-600 rounded-full border-4 border-blue-100 shadow-md z-10"></div>
-     
+
                   <div className="w-5 h-5 bg-blue-600 rounded-full border-4 border-blue-100 shadow-md z-10"></div>
-                  
+
                 </div>
 
                 {/* Right Section */}
-                <div className="w-1/2 pl-8 md:pl-12 ">
+                <div className="w-1/2">
                   {right && (
                     <div className="text-left flex flex-col">
-                      <div className="w-96 h-[239px] flex justify-start flex-col self-start items-start">
-                      <h2 className="text-2xl font-semibold">
+                      <div className="w-[450px] h-[280px] flex justify-start flex-col self-start items-start">
+                        <h2 className="text-2xl font-semibold">
                           {right.title}
                         </h2>
                         <p className="text-gray-700">{right.description}</p>
@@ -96,7 +101,7 @@ const WhyUs = () => {
                       <img
                         src={right.img}
                         alt={right.title}
-                        className="w-96 h-[239px] flex justify-center items-center rounded-lg shadow-lg"
+                        className="w-[450px] h-[280px] flex justify-center items-center rounded-3xl shadow-lg"
                       />
                     </div>
                   )}

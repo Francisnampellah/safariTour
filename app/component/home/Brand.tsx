@@ -5,7 +5,7 @@ export default function Brand() {
     return (
         <section
             id="section-3"
-            className="w-full overflow-hidden py-16 flex flex-col justify-center items-center md:gap-8 "
+            className="w-full overflow-hidden py-16 flex flex-col justify-center items-center md:gap-8 rounded-3xl"
         >
 
             <h1 className='text-3xl md:text-4xl font-black'>Our Partner</h1>

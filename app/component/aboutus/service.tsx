@@ -21,12 +21,14 @@ const services = [
 
 const Service = () => {
   return (
-    <section className="bg-gray-100 py-10 w-screen h-screen px-32">
+    <section className="h-auto overflow-y-hidden flex w-full flex-col gap-16 my-8 ">
       <div className="px-4">
         {/* Header Section */}
-        <div className="mb-8">
-          <h3 className="text-blue-500 text-sm uppercase">/// Services</h3>
-          <h1 className="text-5xl font-bold">Our Services</h1>
+        <div className="px-16 gap-8 my-8 flex flex-col">
+          <h1 className="text-blue-600 text-3xl " > /// <span className="font-semibold">Service</span></h1>
+          <h1 className="text-5xl text-start">
+            We Are a World Famous Travel Agency
+          </h1>
         </div>
 
         {/* Content Section */}
@@ -40,12 +42,12 @@ const Service = () => {
               >
                 <div className="flex items-start w-full">
                   {/* Icon */}
-                  <div className="w-10 h-10 flex-shrink-0 text-gray-500 mr-4 flex items-center justify-center rounded-full border border-2">
+                  <div className="w-10 h-10 flex-shrink-0 text-gray-500 mr-4 flex items-center justify-center rounded-full border ">
                     <GoArrowUpRight className="text-xl" />
                   </div>
 
                   {/* Service Info */}
-                  <div>
+                  <div className=" flex flex-col gap-4">
                     <h2 className="text-3xl font-semibold">{service.title}</h2>
                     <p className="text-gray-600 ">{service.description}</p>
                   </div>
@@ -59,11 +61,11 @@ const Service = () => {
           </div>
 
           {/* Right Side - Image */}
-          <div className="w-[50%]">
+          <div className="">
             <img
               src="https://plus.unsplash.com/premium_photo-1670148434900-5f0af77ba500?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="service"
-              className="w-full h-96 rounded-lg shadow-lg"
+              className="w-[660px] h-[373px] rounded-3xl shadow-lg"
             />
           </div>
         </div>

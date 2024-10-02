@@ -33,7 +33,7 @@ const PopularPackage = () => {
     <section
       id="section-1"
       ref={sectionRef}
-      className="flex flex-col justify-start px-8 py-5 lg:px-16 lg:py-[110px] gap-8 md:gap-8 rounded-3xl "
+      className="flex flex-col justify-start px-4 py-5 lg:px-16 lg:py-[110px] gap-8 md:gap-8 rounded-3xl "
     >
 
       <div className="flex justify-between">
@@ -58,7 +58,7 @@ const PopularPackage = () => {
       </div>
 
       <div className="flex flex-col md:flex-row w-full md:flex-wrap justify-center ">
-        <div className='w-fit flex flex-row gap-4 lg:gap-8 flex-wrap'>
+        <div className='flex flex-row gap-4 lg:gap-8 flex-wrap'>
           {packages.map((item: any) => (
             <TravelAdviceCard key={item.id} item={item} />
           ))}

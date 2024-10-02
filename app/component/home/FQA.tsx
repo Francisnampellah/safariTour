@@ -16,7 +16,7 @@ export const Question = ({ openIndex, handleToggle }: { openIndex: any, handleTo
                 <h1 className="text-3xl md:text-5xl lg:text-6xl">
                     Frequently Asked <br /> Questions
                 </h1>
-                <span className="text-sm md:text-lg mb-4 text-gray-600">
+                <span className="md:text-lg mb-4 text-gray-600">
                     We are a passionate team of travel enthusiasts dedicated to making your travel dreams come true. <br />
                     Our mission is to provide you with the best travel experiences.
                 </span>
