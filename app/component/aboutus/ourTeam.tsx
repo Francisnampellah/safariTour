@@ -24,7 +24,7 @@ const OurTeam = () => {
         <div className="h-80 relative mt-10 rounded-3xl overflow-hidden mx-16">
           {/* Background image */}
           <img
-            src="https://images.unsplash.com/photo-1500180675541-ed5e861c7b98?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="background"
             className="w-full h-full object-cover absolute top-0 left-0"
           />
