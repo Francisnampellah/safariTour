@@ -1,5 +1,5 @@
 import { GiConvergenceTarget } from "react-icons/gi";
-import CountUpGrid from "../countUp";
+// import CountUpGrid from "../countUp";
 
 const AboutUsSection = () => (
   <section
