@@ -48,11 +48,11 @@ const Service = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 bg-slate-200 py-16 mb-8 shadow">
-      <div className="px-4">
+    <section ref={sectionRef} className="h-auto flex w-full flex-col gap-8 my-8 px-4 md:px-16 pb-8 md:py-16 mb-8 shadow">
+      <div className="md:px-4">
         {/* Header Section */}
-        <div className="px-16 gap-8 my-8 flex flex-col item-end">
-          <div className="text-blue-600 text-3xl flex gap-4">
+        <div className="md:px-16 gap-2 md:gap-8 my-8 flex flex-col item-end">
+          <div className="text-blue-600 text-xl flex gap-4">
             {/* Animated Compass Icon */}
             <motion.div
               initial={{ scale: 0.8, rotate: 0, opacity: 0 }} // Start with smaller size and no rotation
@@ -63,16 +63,16 @@ const Service = () => {
             </motion.div>
             <span className="font-semibold">Our Service</span>
           </div>
-          <h1 className="text-5xl text-start">
+          <h1 className="text-xl md:text-5xl text-start">
             We Are a World Famous Travel Agency
           </h1>
         </div>
 
 
         {/* Content Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+        <div className="flex md:flex-row items-center justify-center gap-8 w-full flex-col-reverse">
           {/* Left Side - List of Services */}
-          <div className="w-[30%]">
+          <div className="md:w-[30%]">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -86,8 +86,8 @@ const Service = () => {
 
                   {/* Service Info */}
                   <div className=" flex flex-col gap-4">
-                    <h2 className="text-2xl font-semibold">{service.title}</h2>
-                    <p className="text-gray-600 text-xl">{service.description}</p>
+                    <h2 className="text-xl font-semibold">{service.title}</h2>
+                    <p className="text-gray-600 text-lg">{service.description}</p>
                   </div>
                 </div>
                 {/* Horizontal Line */}
@@ -103,7 +103,7 @@ const Service = () => {
             <img
               src="https://media.gettyimages.com/id/1018301704/photo/always-eager-to-provide-guests-with-the-best-service.jpg?s=2048x2048&w=gi&k=20&c=bcWDJOSe40hQaEUnr_jbRPyv82313jDv2QirCDaLeW8="
               alt="service"
-              className="w-[750px] h-[466px] rounded-3xl shadow-lg object-cover"
+              className="w-full h-[245px] rounded-3xl shadow-lg object-cover"
             />
           </div>
         </div>

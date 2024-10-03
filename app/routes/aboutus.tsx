@@ -39,7 +39,7 @@ export default function aboutus() {
   return (
     <div className='flex flex-col w-full'>
       <div className='flex h-auto flex-col px-4 pt-4 pb-8 gap-4 bg-[#fff]'>
-        <div className="relative w-full shadow-sm bg-cover h-[60vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.Heroimage.imageUrl})` }}>
+        <div className="relative w-full shadow-sm bg-cover h-[30vh] md:h-[60vh] rounded-3xl overflow-hidden bg-center" style={{ backgroundImage: `url(${AllImages.Heroimage.imageUrl})` }}>
           <div className="flex flex-col justify-between w-full h-full bg-black bg-opacity-40 ">
             <Header />
           </div>

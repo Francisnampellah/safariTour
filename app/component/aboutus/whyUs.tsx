@@ -1,5 +1,4 @@
-import React from "react";
-
+import WhyUsCard from "../WhyUsCard";
 import { LuCheckCircle } from "react-icons/lu";
 
 const LeftSections = [
@@ -41,16 +40,20 @@ const WhyUs = () => {
   const maxSections = Math.max(LeftSections.length, RightSections.length);
 
   return (
-    <div className="h-auto flex w-full flex-col gap-8 my-8 md:px-32 py-16">
+    <div className="h-auto flex w-full flex-col gap-2 md:gap-8 md:my-8 md:px-32 py-8 md:py-16 bg-white">
 
-      <div className="px-16 gap-8 my-8 flex flex-col">
-        <div className="text-blue-600 text-3xl flex gap-4 items-end" > <LuCheckCircle className="text-5xl" /> <span className="font-semibold">Why Safari</span></div>
-        <h1 className="text-5xl text-start">
+      <div className="px-4 md:px-8 gap-2 md:gap-8 my-2 md:my-8 flex flex-col">
+        <div className="text-blue-600 text-2xl md:text-3xl  flex gap-2 md:gap-4 items-end" > <LuCheckCircle className="text-4xl md:text-5xl" /> <span className="font-semibold">Why Safari</span></div>
+        <h1 className="text-xl md:5xl text-start">
           We Are a World Famous Travel Agency
         </h1>
       </div>
 
-      <div className="relative ">
+      <div className=" flex lg:hidden">
+      <WhyUsCard/>
+      </div>
+
+      <div className="relative hidden lg:flex ">
         {/* Central Vertical Line */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
