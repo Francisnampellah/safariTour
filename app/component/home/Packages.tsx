@@ -33,7 +33,7 @@ const PopularPackage = () => {
     <section
       id="section-1"
       ref={sectionRef}
-      className="flex flex-col justify-start px-4 py-5 lg:px-16 lg:py-[110px] gap-8 md:gap-8 rounded-3xl "
+      className="flex flex-col justify-start px-4 py-5 lg:px-4 lg:py-[110px] gap-8 md:gap-8 rounded-3xl "
     >
 
       <div className="flex justify-between">

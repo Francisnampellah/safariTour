@@ -35,7 +35,7 @@ export default function OurService() {
         <section
             id="section-5"
             ref={sectionRef}
-            className="flex flex-col justify-start gap-4 py-8 scrollSnap lg_pd md:px-32"
+            className="flex flex-col justify-start gap-4 py-8 scrollSnap lg_pd md:px-4"
         >
             <h2 className="text-3xl md:text-4xl font-semibold text-start text-blue-500 mb-4 flex gap-4 md:gap-8 items-center md:px-8" >
                 <motion.div

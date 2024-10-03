@@ -46,9 +46,9 @@ export default function aboutus() {
         </div>
 
       </div>
-      <WhyUs />
+      {/* <WhyUs /> */}
       <Service />
-      <OurTeam />
+      {/* <OurTeam /> */}
       <Footer />
     </div>
   );
