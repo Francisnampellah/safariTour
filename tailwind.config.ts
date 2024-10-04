@@ -9,12 +9,12 @@ export default {
 
   theme: {
     extend: {
-      // Custom `clipPath` for polygonal shapes
+      // Custom clipPath for polygonal shapes
       clipPath: {
         custom: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)", // Inverted effect
       },
 
-      // Custom `fontFamily` setup
+      // Custom fontFamily setup
       fontFamily: {
         sans: [
           "Poppins",
@@ -34,6 +34,7 @@ export default {
   },
 
   plugins: [
+    require("daisyui"), // Add DaisyUI plugin here
     // Plugin to hide scrollbars across browsers
     function ({ addUtilities }: { addUtilities: Function }) {
       addUtilities({
@@ -46,6 +47,5 @@ export default {
         },
       });
     },
-    require("daisyui"), // Add DaisyUI plugin here
   ],
 } satisfies Config;

@@ -12,7 +12,6 @@ interface Destination {
 }
 
 const PackagesHeader = () => {
-  // const [search, setSearch] = useState("");
   const [result, setResult] = useState<Destination[]>([]);
 
   const loadTours = () => {
@@ -20,8 +19,7 @@ const PackagesHeader = () => {
   };
 
   const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    // setSearch(value);
+    const { value } = e.target;
     handleSearch(destinations, value);
   };
 
@@ -35,29 +33,31 @@ const PackagesHeader = () => {
 
     setResult(item);
   };
+
   useEffect(() => {
     loadTours();
   }, []);
+
   return (
-    <div className=" w-[88%]  my-5 mx-auto">
-      <h5 className="font-normal mb-3 text-sm"> TOP PLACES</h5>
+    <div className="w-[90%] mx-auto my-5">
+      <h5 className="font-normal mb-3 text-sm">TOP PLACES</h5>
       <div className="flex flex-col gap-3">
-        <h2 className="text-3xl">Popular Destination</h2>
-        <span className="text-xs text-gray-400">
+        <h2 className="text-3xl text-center">Popular Destination</h2>
+        <span className="text-xs text-gray-400 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
           pariatur, dolor nobis possimus magni recusandae atque, sed odio harum
         </span>
       </div>
-      <div className=" my-5 flex justify-between">
-        <button className="border border-s outline-none text-sm p-3 bg-gray-600 m-2  text-gray-300 rounded-3xl">
+      <div className="my-5 flex flex-col md:flex-row justify-between">
+        <button className="border border-s outline-none text-sm p-3 bg-gray-600 m-2 text-gray-300 rounded-3xl">
           Discover More
         </button>
 
-        <div>
+        <div className="flex justify-center">
           <label className="input input-bordered flex items-center gap-2">
             <input
               type="text"
-              className="grow "
+              className="grow p-2"
               placeholder="Budget or Destination"
               onChange={(e) => handleChange(e)}
             />
@@ -66,7 +66,6 @@ const PackagesHeader = () => {
               viewBox="0 0 16 16"
               fill="currentColor"
               className="h-4 w-4 opacity-70 cursor-pointer"
-              // onClick={() => handleSearch(destinations)}
             >
               <path
                 fillRule="evenodd"
@@ -78,10 +77,10 @@ const PackagesHeader = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-y-10 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 justify-center">
         {result.map((result, index) => (
           <div key={index} className="h-full flex justify-center">
-            <div className="card bg-base-100  w-[90%] shadow rounded-3xl">
+            <div className="card bg-base-100 w-full md:w-[90%] shadow rounded-3xl">
               <figure>
                 <img
                   src={result.imageUrl}
@@ -90,15 +89,15 @@ const PackagesHeader = () => {
                 />
               </figure>
               <div className="card-body">
-                <div className="flex justify-between p-4">
-                  <h2 className="card-title">{result.name}</h2>
-                  <div className="badge badge-primary  text-gray-50  font-black p-3">
+                <div className="flex justify-between px-4 py-3">
+                  <h2 className="card-title text-lg">{result.name}</h2>
+                  <div className="badge badge-primary text-gray-50 font-black p-3">
                     <span className="tracking-widest">${result.price}</span>
                   </div>
                 </div>
-                <div className="flex flex-col w-full h-[35%]  justify-between items-center px-4 py-1 gap-2 mt-4">
-                  <div className=" text-sm line-clamp-8">{result.details}</div>
-                  <div className=" flex justify-between items-center w-full">
+                <div className="flex flex-col w-full h-[35%] justify-between items-center px-4  gap-2 ">
+                  <div className="text-sm line-clamp-7">{result.details}</div>
+                  <div className="flex justify-between items-center w-full">
                     {[...Array(4)].map((_, index) => (
                       <FontAwesomeIcon
                         key={index}
