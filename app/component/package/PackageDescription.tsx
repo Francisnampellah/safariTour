@@ -8,7 +8,7 @@ const PackageDescription = () => {
       case 'Description':
         return (
           <div>
-            <h2 className="text-xl font-bold mb-4">Description</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-4">Description</h2>
             <p>
               This package offers a comprehensive tour of the most beautiful and exotic locations. 
               You will experience breathtaking landscapes, vibrant cultures, and unforgettable adventures. 
@@ -31,7 +31,7 @@ const PackageDescription = () => {
       case 'List':
         return (
           <div>
-            <h2 className="text-xl font-bold mb-4">List</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-4">List</h2>
             <ul className="list-disc ml-5">
               <li>Day 1: Arrival and welcome dinner</li>
               <li>Day 2: City tour and museum visit</li>
@@ -46,7 +46,7 @@ const PackageDescription = () => {
       case 'Reviews':
         return (
           <div>
-            <h2 className="text-xl font-bold mb-4">Reviews</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-4">Reviews</h2>
             <div className="mb-4">
               <p className="font-bold">John Doe</p>
               <p>
@@ -78,10 +78,11 @@ const PackageDescription = () => {
   };
 
   return (
-    <section className="h-auto flex w-full flex-col gap-8 my-8 md:px-32">
-      <div className="flex flex-row h-auto">
-        <div className="w-2/3">
-          <div className="flex flex-row space-x-6">
+    <section className="h-auto flex flex-col gap-8 my-8 px-4 md:px-32">
+      <div className="flex flex-col md:flex-row">
+        {/* Left Section */}
+        <div className="md:w-2/3 w-full">
+          <div className="flex flex-row space-x-6 mb-4">
             <div className="relative">
               <h1
                 className={`cursor-pointer ${activeSection === 'Description' ? 'font-bold' : ''}`}
@@ -112,8 +113,10 @@ const PackageDescription = () => {
           </div>
           <div className="my-4">{renderContent()}</div>
         </div>
-        <div className="w-1/3 p-4">
-          <div className="flex flex-col ml-4">
+
+        {/* Right Section */}
+        <div className="md:w-1/3 w-full p-4 mt-8 md:mt-0">
+          <div className="flex flex-col">
             <div>
               <p>Additional Information</p>
             </div>

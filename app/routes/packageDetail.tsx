@@ -27,8 +27,8 @@ export default function packageDetail() {
           </div>
   
         </div>
-        <PackageImage/>
-      <PackageDescription/>
+        {/* <PackageImage/>
+      <PackageDescription/> */}
       <PackageOffer/>
      
       </div>

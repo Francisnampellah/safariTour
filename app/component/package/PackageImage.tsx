@@ -25,18 +25,10 @@ const Package = () => {
     setSelectedImage(newImageUrl);
   };
 
-  // Function to handle smooth scrolling
-  const handleScrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="package-section" className="h-auto mx-auto my-8 px-6 md:px-32">
-      <Breadcrumb onScrollToSection={handleScrollToSection} />
-      <div className="flex gap-8 mt-8">
+    <section id="package-section" className="h-auto mx-auto my-8 px-4 md:px-32">
+      <Breadcrumb />
+      <div className="flex flex-col md:flex-row gap-8 mt-8">
         <ProductImageList onImageClick={handleImageChange} />
         <MainProductImage selectedImage={selectedImage} />
         <ProductDetails
@@ -53,18 +45,18 @@ const Package = () => {
   );
 };
 
-const Breadcrumb = ({ onScrollToSection }: { onScrollToSection: (sectionId: string) => void }) => (
-  <div className="flex items-center space-x-2 text-gray-500">
-    <BreadcrumbItem name="HOME" onClick={() => onScrollToSection("home-section")} />
+const Breadcrumb = () => (
+  <div className="flex items-center space-x-2 text-gray-500 text-sm md:text-base">
+    <BreadcrumbItem name="HOME" />
     <RxDoubleArrowRight />
-    <BreadcrumbItem name="SHOP" onClick={() => onScrollToSection("shop-section")} />
+    <BreadcrumbItem name="SHOP" />
     <RxDoubleArrowRight />
-    <BreadcrumbItem name="I LOVE MY PET CHARM BRACELET" onClick={() => onScrollToSection("package-section")} />
+    <BreadcrumbItem name="I LOVE MY PET CHARM BRACELET" />
   </div>
 );
 
-const BreadcrumbItem = ({ name, onClick }: { name: string, onClick: () => void }) => (
-  <h1 className="text-sm md:text-base cursor-pointer" onClick={onClick}>{name}</h1>
+const BreadcrumbItem = ({ name }: { name: string }) => (
+  <h1 className="cursor-pointer">{name}</h1>
 );
 
 const ProductImageList = ({ onImageClick }: { onImageClick: (url: string) => void }) => {
@@ -76,9 +68,9 @@ const ProductImageList = ({ onImageClick }: { onImageClick: (url: string) => voi
   ];
 
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex md:flex-col space-x-4 md:space-y-4">
       {imageUrls.map((url, index) => (
-        <div key={index} className="w-24 h-24">
+        <div key={index} className="w-16 h-16 md:w-24 md:h-24">
           <img 
             src={url} 
             alt={`Product preview ${index + 1}`} 
@@ -96,7 +88,7 @@ const MainProductImage = ({ selectedImage }: { selectedImage: string }) => (
     <img 
       src={selectedImage} 
       alt="Main product" 
-      className="w-full h-full object-cover rounded-md shadow-md"
+      className="w-full h-64 md:h-full object-cover rounded-md shadow-md"
     />
   </div>
 );
@@ -121,31 +113,31 @@ const ProductDetails = ({
   handleDecrement,
 }: ProductDetailsProps) => (
   <div className="flex-1 p-6 bg-white rounded-md shadow-lg">
-    <h1 className="text-gray-500">JEWELRY</h1>
-    <h2 className="text-2xl font-extrabold text-black mt-2">I LOVE MY PET CHARM BRACELET</h2>
+    <h1 className="text-gray-500 text-sm md:text-base">JEWELRY</h1>
+    <h2 className="text-xl md:text-2xl font-extrabold text-black mt-2">I LOVE MY PET CHARM BRACELET</h2>
 
     <div className="flex items-center space-x-2 mt-4">
       <div className="flex text-yellow-500">
         <FaStar /><FaStar /><FaStar /><FaStar /><FaRegStarHalfStroke />
       </div>
-      <span className="text-gray-600">5 reviews</span>
+      <span className="text-gray-600 text-sm">5 reviews</span>
     </div>
 
-    <p className="text-3xl font-bold text-gray-800 mt-4">$25</p>
+    <p className="text-xl md:text-3xl font-bold text-gray-800 mt-4">$25</p>
 
     <div className="mt-6">
       <ProductOption label="Bracelet Animal" value={selectedDog} handleChange={handleAnimalChange} options={["Dog", "Labrador", "Poodle", "Bulldog", "Beagle"]} />
       <ProductOption label="Color" value={selectedColor} handleChange={handleColorChange} options={["red", "blue", "black", "green", "white"]} />
     </div>
 
-    <div className="flex justify-between items-center mt-4">
+    <div className="flex justify-between items-center mt-4 text-sm md:text-base">
       <p className="text-gray-500">Availability: 10 in stock</p>
       <p className="text-gray-500">SKU: ILMPT-C</p>
     </div>
 
-    <div className="flex items-center mt-6 space-x-4">
+    <div className="flex flex-col md:flex-row items-center mt-6 space-y-4 md:space-y-0 md:space-x-4">
       <QuantitySelector count={count} handleIncrement={handleIncrement} handleDecrement={handleDecrement} />
-      <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Add to Cart</button>
+      <button className="w-full md:w-auto bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Add to Cart</button>
     </div>
 
     <ShareButtons />
@@ -153,7 +145,7 @@ const ProductDetails = ({
 );
 
 const ProductOption = ({ label, value, handleChange, options }: { label: string, value: string, handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void, options: string[] }) => (
-  <div className="flex justify-between items-center mt-4">
+  <div className="flex justify-between items-center mt-4 text-sm md:text-base">
     <p>{label}</p>
     <select value={value} onChange={handleChange} className="bg-transparent border-b border-gray-300 focus:outline-none">
       {options.map(option => (
@@ -172,7 +164,7 @@ const QuantitySelector = ({ count, handleIncrement, handleDecrement }: { count: 
 );
 
 const ShareButtons = () => (
-  <div className="mt-6 flex items-center space-x-4">
+  <div className="mt-6 flex items-center space-x-4 text-sm md:text-base">
     <h3 className="text-gray-500">SHARE ON:</h3>
     <div className="flex space-x-4 text-gray-500">
       <FaFacebookF />
