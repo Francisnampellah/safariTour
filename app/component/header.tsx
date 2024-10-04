@@ -11,6 +11,7 @@ export default function Header() {
         { title: "Home", href: "/" },
         { title: "Services", href: "/packages" },
         { title: "FAQ", href: "/faq" },
+        { title: "FAQ", href: "/packageDetail" },
         { title: "About Us", href: "/aboutus" }
     ];
 
