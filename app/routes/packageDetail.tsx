@@ -1,6 +1,8 @@
 import React ,{ useState } from 'react';
 import Header from "~/component/header";
+import PackageDescription from '~/component/package/PackageDescription';
 import  PackageImage from "~/component/package/PackageImage"
+import PackageOffer from '~/component/package/PackageOffer';
 export default function packageDetail() {
    
     const AllImages = {
@@ -26,9 +28,9 @@ export default function packageDetail() {
   
         </div>
         <PackageImage/>
-        {/* <Service />
-        <OurTeam />
-        <Footer /> */}
+      <PackageDescription/>
+      <PackageOffer/>
+     
       </div>
     );
   }

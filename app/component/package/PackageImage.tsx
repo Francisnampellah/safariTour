@@ -3,6 +3,8 @@ import { RxDoubleArrowRight } from "react-icons/rx";
 import { FaStar, FaInstagram, FaFacebookF, FaTwitter, FaRegStarHalfStroke } from "react-icons/fa6";
 
 const Package = () => {
+  // State to track selected image
+  const [selectedImage, setSelectedImage] = useState("https://images.unsplash.com/photo-1529245276044-5d989655f07e?q=80&w=3125&auto=format&fit=crop");
   const [selectedDog, setSelectedDog] = useState("Dog");
   const [selectedColor, setSelectedColor] = useState("red");
   const [count, setCount] = useState(0);
@@ -18,13 +20,26 @@ const Package = () => {
   const handleIncrement = () => setCount(count + 1);
   const handleDecrement = () => count > 0 && setCount(count - 1);
 
+  // Handler to change the main image
+  const handleImageChange = (newImageUrl: string) => {
+    setSelectedImage(newImageUrl);
+  };
+
+  // Function to handle smooth scrolling
+  const handleScrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="h-auto mx-auto my-8 px-6 md:px-32">
-      <Breadcrumb />
+    <section id="package-section" className="h-auto mx-auto my-8 px-6 md:px-32">
+      <Breadcrumb onScrollToSection={handleScrollToSection} />
       <div className="flex gap-8 mt-8">
-        <ProductImageList />
-        <MainProductImage />
-        <ProductDetails 
+        <ProductImageList onImageClick={handleImageChange} />
+        <MainProductImage selectedImage={selectedImage} />
+        <ProductDetails
           selectedDog={selectedDog}
           selectedColor={selectedColor}
           handleAnimalChange={handleAnimalChange}
@@ -38,21 +53,21 @@ const Package = () => {
   );
 };
 
-const Breadcrumb = () => (
+const Breadcrumb = ({ onScrollToSection }: { onScrollToSection: (sectionId: string) => void }) => (
   <div className="flex items-center space-x-2 text-gray-500">
-    <BreadcrumbItem name="HOME" />
+    <BreadcrumbItem name="HOME" onClick={() => onScrollToSection("home-section")} />
     <RxDoubleArrowRight />
-    <BreadcrumbItem name="SHOP" />
+    <BreadcrumbItem name="SHOP" onClick={() => onScrollToSection("shop-section")} />
     <RxDoubleArrowRight />
-    <BreadcrumbItem name="I LOVE MY PET CHARM BRACELET" />
+    <BreadcrumbItem name="I LOVE MY PET CHARM BRACELET" onClick={() => onScrollToSection("package-section")} />
   </div>
 );
 
-const BreadcrumbItem = ({ name }: { name: string }) => (
-  <h1 className="text-sm md:text-base">{name}</h1>
+const BreadcrumbItem = ({ name, onClick }: { name: string, onClick: () => void }) => (
+  <h1 className="text-sm md:text-base cursor-pointer" onClick={onClick}>{name}</h1>
 );
 
-const ProductImageList = () => {
+const ProductImageList = ({ onImageClick }: { onImageClick: (url: string) => void }) => {
   const imageUrls = [
     "https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?q=80&w=2925&auto=format&fit=crop",
     "https://plus.unsplash.com/premium_photo-1679865372673-8d1655a73b50?q=80&w=2970&auto=format&fit=crop",
@@ -64,17 +79,22 @@ const ProductImageList = () => {
     <div className="flex flex-col space-y-4">
       {imageUrls.map((url, index) => (
         <div key={index} className="w-24 h-24">
-          <img src={url} alt={`Product preview ${index + 1}`} className="w-full h-full object-cover rounded-md shadow-md" />
+          <img 
+            src={url} 
+            alt={`Product preview ${index + 1}`} 
+            className="w-full h-full object-cover rounded-md shadow-md cursor-pointer"
+            onClick={() => onImageClick(url)} // Call onImageClick when clicked
+          />
         </div>
       ))}
     </div>
   );
 };
 
-const MainProductImage = () => (
+const MainProductImage = ({ selectedImage }: { selectedImage: string }) => (
   <div className="flex-1">
     <img 
-      src="https://images.unsplash.com/photo-1529245276044-5d989655f07e?q=80&w=3125&auto=format&fit=crop" 
+      src={selectedImage} 
       alt="Main product" 
       className="w-full h-full object-cover rounded-md shadow-md"
     />
