@@ -9,7 +9,8 @@ export default function Header() {
     // Define your links with hrefs only
     const links = [
         { title: "Home", href: "/" },
-        { title: "Services", href: "/services" },
+        { title: "Services", href: "/packages" },
+        { title: "FAQ", href: "/faq" },
         { title: "FAQ", href: "/packageDetail" },
         { title: "About Us", href: "/aboutus" }
     ];
