@@ -1,0 +1,561 @@
+[
+    {
+      "id": 1,
+      "title": "Beach Paradise Getaway",
+      "numberOfDays": 7,
+      "description": "Relax and unwind on the beautiful beaches of Hawaii.",
+      "banner": "https://images.unsplash.com/photo-1489493887464-892be6d1daae?q=80&w=2967&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "USA",
+      "tourLevel": "Beginner",
+      "tourFocus": "Leisure",
+      "tourStartCity": "Honolulu",
+      "tourEndCity": "Honolulu",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 1500.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Honolulu",
+          "description": "Check-in and relax at the beach.",
+          "accommodationName": "Beach Resort",
+          "accommodationType": "Hotel",
+          "accommodationLocation": "Honolulu",
+          "accommodationLevel": "4-Star",
+          "meal": "Dinner",
+          "image": "https://plus.unsplash.com/premium_photo-1661962981333-ec70f0098860?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Honolulu"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Explore Waikiki",
+          "description": "Spend the day exploring the famous Waikiki beach.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1515205244153-fce4e5d8bc49?q=80&w=3052&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Waikiki"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Snorkeling at Hanauma Bay"
+        },
+        {
+          "id": 2,
+          "activity": "Hiking Diamond Head"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Van"
+        },
+        {
+          "id": 2,
+          "transport": "Boat"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "Breakfast daily"
+        },
+        {
+          "id": 2,
+          "inclusion": "Airport transfers"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Adventure in the Rockies",
+      "numberOfDays": 5,
+      "description": "Explore the breathtaking landscapes and wildlife of the Rocky Mountains.",
+      "banner": "https://images.unsplash.com/photo-1527436553949-ea84cd6cf13c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhZmFyaXxlbnwwfHwwfHx8MA%3D%3D",
+      "tourCountry": "Canada",
+      "tourLevel": "Intermediate",
+      "tourFocus": "Adventure",
+      "tourStartCity": "Calgary",
+      "tourEndCity": "Banff",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 1200.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Calgary",
+          "description": "Check-in and explore Calgary.",
+          "accommodationName": "City Hotel",
+          "accommodationType": "Hotel",
+          "accommodationLocation": "Calgary",
+          "accommodationLevel": "3-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1477949775154-d739b82400b3?q=80&w=2974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Calgary"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Banff National Park",
+          "description": "Day trip to Banff National Park.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1536517394620-8fbcfadb9be8?q=80&w=2977&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Banff"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Hiking in Banff"
+        },
+        {
+          "id": 2,
+          "activity": "Wildlife spotting"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "SUV"
+        },
+        {
+          "id": 2,
+          "transport": "Shuttle"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "Guided tours"
+        },
+        {
+          "id": 2,
+          "inclusion": "National park fees"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Cultural Heritage Tour",
+      "numberOfDays": 10,
+      "description": "Immerse yourself in the rich culture and history of Italy.",
+      "banner": "https://images.unsplash.com/photo-1517339234442-5cfdc9a90a69?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "Italy",
+      "tourLevel": "Beginner",
+      "tourFocus": "Culture",
+      "tourStartCity": "Rome",
+      "tourEndCity": "Florence",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 2500.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Rome",
+          "description": "Explore the ancient ruins.",
+          "accommodationName": "Historic Hotel",
+          "accommodationType": "Hotel",
+          "accommodationLocation": "Rome",
+          "accommodationLevel": "5-Star",
+          "meal": "Dinner",
+          "image": "rhttps://images.unsplash.com/photo-1577971132997-c10be9372519?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Rome"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Vatican City Tour",
+          "description": "Visit the Vatican Museums and St. Peter's Basilica.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1568219198012-d586ddfdd65f?q=80&w=2966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Vatican City"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Cooking class in Tuscany"
+        },
+        {
+          "id": 2,
+          "activity": "Wine tasting"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Bus"
+        },
+        {
+          "id": 2,
+          "transport": "Train"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "All meals included"
+        },
+        {
+          "id": 2,
+          "inclusion": "Guided tours"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Safari Adventure in Kenya",
+      "numberOfDays": 12,
+      "description": "Experience the wildlife and landscapes of Kenya.",
+      "banner": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=3125&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "Kenya",
+      "tourLevel": "Intermediate",
+      "tourFocus": "Wildlife",
+      "tourStartCity": "Nairobi",
+      "tourEndCity": "Nairobi",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 3000.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Nairobi",
+          "description": "Welcome dinner and orientation.",
+          "accommodationName": "Luxury Lodge",
+          "accommodationType": "Lodge",
+          "accommodationLocation": "Nairobi",
+          "accommodationLevel": "5-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1449104573673-83d90bf3484f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Nairobi"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Masai Mara Safari",
+          "description": "Begin safari in Masai Mara National Reserve.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1709403229285-35ed7d88a79b?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg",
+          "destination": "Masai Mara"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Game drives"
+        },
+        {
+          "id": 2,
+          "activity": "Visit to a Maasai village"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "4x4 Vehicle"
+        },
+        {
+          "id": 2,
+          "transport": "Charter Flight"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "All park fees"
+        },
+        {
+          "id": 2,
+          "inclusion": "Airport transfers"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "European City Explorer",
+      "numberOfDays": 14,
+      "description": "Visit multiple cities across Europe, including Paris, Berlin, and Prague.",
+      "banner": "https://images.unsplash.com/photo-1691677543751-f47087859ecd?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "Various",
+      "tourLevel": "Advanced",
+      "tourFocus": "City Exploration",
+      "tourStartCity": "Paris",
+      "tourEndCity": "Prague",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 4000.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Paris",
+          "description": "Sightseeing in Paris.",
+          "accommodationName": "Central Hotel",
+          "accommodationType": "Hotel",
+          "accommodationLocation": "Paris",
+          "accommodationLevel": "4-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1674909073723-e74e82810733?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Paris"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Explore Paris",
+          "description": "Visit Eiffel Tower and Louvre.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1682970982553-aee4ad25d4cf?q=80&w=3037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Paris"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Guided tour of Berlin Wall"
+        },
+        {
+          "id": 2,
+          "activity": "Boat cruise on Vltava"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Train"
+        },
+        {
+          "id": 2,
+          "transport": "Bus"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "Accommodation in all cities"
+        },
+        {
+          "id": 2,
+          "inclusion": "City tours"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Tropical Island Escape",
+      "numberOfDays": 6,
+      "description": "Discover the beauty of the Caribbean islands.",
+      "banner": "https://images.unsplash.com/photo-1679451289926-d421c3b5ff43?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "Bahamas",
+      "tourLevel": "Beginner",
+      "tourFocus": "Leisure",
+      "tourStartCity": "Nassau",
+      "tourEndCity": "Nassau",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 1800.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Nassau",
+          "description": "Check-in and relax on the beach.",
+          "accommodationName": "Island Resort",
+          "accommodationType": "Resort",
+          "accommodationLocation": "Nassau",
+          "accommodationLevel": "4-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1709420968279-2b7ea51c6d37?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Nassau"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Island Hopping Tour",
+          "description": "Visit surrounding islands.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1516494982030-fda424f96b59?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Exuma"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Snorkeling"
+        },
+        {
+          "id": 2,
+          "activity": "Beach Volleyball"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Ferry"
+        },
+        {
+          "id": 2,
+          "transport": "Taxi"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "All meals included"
+        },
+        {
+          "id": 2,
+          "inclusion": "Water sports equipment"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Great Wall of China Experience",
+      "numberOfDays": 9,
+      "description": "Visit the iconic Great Wall and explore the rich history of China.",
+      "banner": "https://images.unsplash.com/photo-1517689336274-0184339e2b68?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "China",
+      "tourLevel": "Intermediate",
+      "tourFocus": "Cultural Exploration",
+      "tourStartCity": "Beijing",
+      "tourEndCity": "Xi'an",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 2200.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Beijing",
+          "description": "Visit the Forbidden City.",
+          "accommodationName": "City Hotel",
+          "accommodationType": "Hotel",
+          "accommodationLocation": "Beijing",
+          "accommodationLevel": "4-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1477949858942-6a62ff5e8e19?q=80&w=2623&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Beijing"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Great Wall Tour",
+          "description": "Hike the Great Wall.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://images.unsplash.com/photo-1528140184621-c7c98a8bd418?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Great Wall"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Calligraphy workshop"
+        },
+        {
+          "id": 2,
+          "activity": "Tea ceremony"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Bus"
+        },
+        {
+          "id": 2,
+          "transport": "Train"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "All meals included"
+        },
+        {
+          "id": 2,
+          "inclusion": "Guided tours"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Alaskan Wilderness Adventure",
+      "numberOfDays": 8,
+      "description": "Explore the stunning landscapes of Alaska.",
+      "banner": "https://images.unsplash.com/photo-1517486430290-35657bdcef51?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tourCountry": "USA",
+      "tourLevel": "Intermediate",
+      "tourFocus": "Adventure",
+      "tourStartCity": "Anchorage",
+      "tourEndCity": "Seward",
+      "accommodationAvailable": true,
+      "airportTransportAvailable": true,
+      "basePrice": 2500.00,
+      "userId": 1,
+      "dayItineraries": [
+        {
+          "id": 1,
+          "dayNumber": 1,
+          "title": "Arrival in Anchorage",
+          "description": "Sightseeing in Anchorage.",
+          "accommodationName": "Lodge",
+          "accommodationType": "Lodge",
+          "accommodationLocation": "Anchorage",
+          "accommodationLevel": "3-Star",
+          "meal": "Dinner",
+          "image": "https://images.unsplash.com/photo-1507904264083-3704325da4c4?q=80&w=3125&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Anchorage"
+        },
+        {
+          "id": 2,
+          "dayNumber": 2,
+          "title": "Kenai Fjords National Park",
+          "description": "Day trip to Kenai Fjords.",
+          "meal": "Breakfast, Lunch",
+          "image": "https://plus.unsplash.com/premium_photo-1723615559415-7539f8545c6a?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "destination": "Seward"
+        }
+      ],
+      "tourActivities": [
+        {
+          "id": 1,
+          "activity": "Kayaking"
+        },
+        {
+          "id": 2,
+          "activity": "Wildlife viewing"
+        }
+      ],
+      "transportTypes": [
+        {
+          "id": 1,
+          "transport": "Boat"
+        },
+        {
+          "id": 2,
+          "transport": "Bus"
+        }
+      ],
+      "inclusions": [
+        {
+          "id": 1,
+          "inclusion": "Park entrance fees"
+        },
+        {
+          "id": 2,
+          "inclusion": "All meals included"
+        }
+      ]
+    }]
