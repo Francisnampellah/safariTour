@@ -5,7 +5,7 @@ import { NavLink } from '@remix-run/react'
 
 export default function PackageCard({result}:{result:any}) {
   return (
-    <NavLink to={`package/${result.id}`}  className="h-full flex justify-center">
+    <NavLink to={`/package/${result.id}`}  className="h-full flex justify-center">
     <div className="absolute top-0 z-20 left-0 right-0 text-white">
       <div className="main-container p-4"> {/* Added padding for spacing */}
         <div className="kontainer">
