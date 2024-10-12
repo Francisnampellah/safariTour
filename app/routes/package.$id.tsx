@@ -45,7 +45,7 @@ export default function packageDetail() {
       </div>
       <PackageImage item={Package} />
       <PackageDescription item={Package} />
-      <PackageOffer item={Package} />
+      <PackageOffer  />
 
     </div>
   );
