@@ -92,19 +92,19 @@ const PackageDescription = ({ item }: { item: any }) => {
             </div>
           </div>
         );
-        case 'Transport':
-          return (
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold mb-4">Activities</h2>
-              <div className="mb-4">
-                <ul className="list-disc">
-                  {item.transportTypes.map((transport: any) => (
-                    <li>{transport.transport}</li>
-                  ))}
-                </ul>
-              </div>
+      case 'Transport':
+        return (
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold mb-4">Activities</h2>
+            <div className="mb-4">
+              <ul className="list-disc">
+                {item.transportTypes.map((transport: any) => (
+                  <li>{transport.transport}</li>
+                ))}
+              </ul>
             </div>
-          );
+          </div>
+        );
       default:
         return null;
     }
@@ -168,25 +168,22 @@ const PackageDescription = ({ item }: { item: any }) => {
         {/* Right Section */}
         <div className="md:w-1/3 w-full p-4 mt-8 md:mt-0">
           <div className="flex flex-col">
-            <div>
-              <p>Additional Information</p>
+            <div >
+              <p className="font-bold">Additional Information</p>
             </div>
-            <div className="flex flex-col mt-4">
-              <div>
-                <p className="font-bold">DIMENSIONS</p>
-              </div>
-              <div>
-                <p>3X3X3</p>
-              </div>
+            <div className="flex flex-col mt-4 md:px-8 gap-4">
+              {item.accommodationAvailable ? <div>
+                <p >Accomodation Available</p>
+              </div> : <div>
+                <p >Accomodation wont be Provided</p>
+              </div>}
+              {item.airportTransportAvailable ? <div>
+                <p>Transport available from the airport</p>
+              </div> : <div>
+                <p>Transport from the airport Wont be Provided </p>
+              </div>}
             </div>
-            <div className="flex flex-col mt-4">
-              <div className="font-bold">
-                <p>WEIGHT</p>
-              </div>
-              <div>
-                <p>0.75 lbs</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
